@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+	<title>Document</title>
+	<script>
+		(function (doc, win) {
+        	var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else if (clientWidth <= 320) {
+                	docEl.style.fontSize = '50px';
+                }
+                else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+        	if (!doc.addEventListener) return;
+        	win.addEventListener(resizeEvt, recalc, false);
+        	doc.addEventListener('DOMContentLoaded', recalc, false);
+    	})(document, window);
+	</script>
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/base.css">
+</head>
+<body>
+<header class="header">
+	<div class="top">
+		<div class="left">
+			<img src="./images/left.jpg" alt="">
+		</div>
+		<div class="center">
+			<h2>推广中心</h2>
+			<p>边玩游戏边赚钱</p>
+		</div>
+		<div class="right">
+			<!-- <ul>
+				<li><span></span><p></p></li>
+				<li><span></span><p></p></li>
+				<li><span></span><p></p></li>
+			</ul> -->
+			<img src="./images/more.jpg" alt="">
+		</div>
+	</div>
+	<div class="bottom">
+		<div class="left">
+			<img src="./images/user_logo.png" alt="">
+		</div>
+		<div class="center">
+			<div class="left"><p>亲爱的推广员<span>白先生，</span>您好！</p></div>
+			<div class="right">
+				<span>我要赚钱</span>
+				<img src="./images/right_header.jpg" alt="">
+			</div>
+		</div>
+		<div class="right">
+			<div class="left">
+				<img src="./images/people.jpg" alt="">
+				<span>有效推广人数</span>
+				<span>888人</span>
+			</div>
+			<div class="line"></div>
+			<div class="left">
+				<img src="./images/money.png" alt="">
+				<span>通过推广已赚钱</span>
+				<span>888.00元</span>
+			</div>
+		</div>
+	</div></header>
+<div class="space"></div>
+<div class="money">
+	<div class="top">
+		<div class="left">
+			<p>已赚给余 : <span>49.52</span>元</p>
+		</div>
+		<div class="right">
+			<p>转至余额</p>
+			<img src="./images/right.jpg" alt="">
+		</div>
+	</div>
+	<div class="bottom">
+		<p>专属推广地址：<a href="">http://m.moyoyo.com/qt/t2157</a> [长按复制]</p>
+		<span>此地址送给朋友或其他玩家，可享高达50%的购物提成！</span>
+	</div>
+</div>
+<div class="space"></div>
+<div class="tuiguang">
+	<p><img src="./images/zhang.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
+	<p>平台售价：66666元</p>
+	<p>最多可赚：<span>5000</span>元</p>
+	<!-- 27 27  154 50-->
+	<img src="./images/zan.jpg" alt="">
+</div>
+<div class="space"></div>
+<div class="tuiguang">
+	<p><img src="./images/shou.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
+	<p>平台售价：66666元</p>
+	<p>最多可赚：<span>5000</span>元</p>
+	<!-- 27 27  154 50-->
+	<img src="./images/zan.jpg" alt="">
+</div>
+<div class="space"></div>
+<div class="tuiguang">
+	<p><img src="./images/zhang.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
+	<p>平台售价：66666元</p>
+	<p>最多可赚：<span>5000</span>元</p>
+	<!-- 27 27  154 50-->
+	<img src="./images/zan.jpg" alt="">
+</div>
+<div class="space"></div>
+<div class="tuiguang">
+	<p><img src="./images/shou.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
+	<p>平台售价：66666元</p>
+	<p>最多可赚：<span>5000</span>元</p>
+	<!-- 27 27  154 50-->
+	<img src="./images/zan.jpg" alt="">
+</div>
+<div class="space"></div>
+<div class="tuiguang">
+	<p><img src="./images/zhang.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
+	<p>平台售价：66666元</p>
+	<p>最多可赚：<span>5000</span>元</p>
+	<!-- 27 27  154 50-->
+	<img src="./images/zan.jpg" alt="">
+</div>
+<div class="space"></div>
+<div class="tuiguang">
+	<p><img src="./images/shou.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
+	<p>平台售价：66666元</p>
+	<p>最多可赚：<span>5000</span>元</p>
+	<!-- 27 27  154 50-->
+	<img src="./images/zan.jpg" alt="">
+</div>
+<div class="click_more">
+	<p>点击加载更多...</p>
+</div>
+</body>
+</html>
