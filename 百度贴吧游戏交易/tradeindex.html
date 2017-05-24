@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="author" content="changjing">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else if (clientWidth <= 320) {
+                        docEl.style.fontSize = '50px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script type="text/javascript" src="http://res.moyoyo.com/res/style/2015/js/zepto.min.js"></script>
+
+    <script>
+        var iNow2 = 0;
+        $(function () {
+            $("#box ul li").tap(function () {
+                var index = $(this).index();
+                iNow2 = index;
+                $('.scale_img').css('display', 'block');
+                $('.shabu').css('display', 'block');
+                var ofw = $('.scale_img .img li')[0].offsetWidth;
+                console.log(ofw, index);
+                $('.scale_img .img').css('transform', 'translate3d(' + (-index * ofw) + 'px,0px,0px)');
+                var textLen = $('.text > li').length;
+                if (index >= 1 && index <= textLen - 1) {
+                    // $('.text > li')[index].setAttribute('class','red');
+                    $($('.text > li')[index]).addClass("red");
+                    $('.text > li')[index - 1].setAttribute('class', '');
+                }
+                // if(index >= 2){
+                //     $('.text > li')[0].setAttribute('class','');
+                // }
+                if (index <= textLen - 2 && index >= 0) {
+                    $('.text > li')[index].setAttribute('class', 'red');
+                    $('.text > li')[index + 1].setAttribute('class', '');
+                }
+            });
+        });
+    </script>
+
+    <title>百度贴吧游戏交易</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+    <section class="header_bg">
+        <div class="more"><a href="">全部游戏及商品 </a><img src="images/jt.png"></div>
+        <div class="game_img"><img src="img/1.png"></div>
+        <div class="game_name">王者荣耀</div>
+        <div class="txt">hi，欢迎<font class="blue">嘻嘻大人</font>您的到来~</div>
+    </section>
+    <section class="main">
+        <div class="qq"><font class="fl"><img src="images/qq.png">QQ：3480978528</font> <font class="fr">周一至周五
+            9：00-19：00</font></div>
+    </section>
+    <section class="main">
+        <div class="tradelist cf">
+            <ul>
+                <li>
+                    <div class="goods">
+                        <p class="part">【成品号】白金.全英雄.全皮肤.三套150级铭
+                            文.战力2000</p>
+                        <p class="tit">全天龙八部3D-S064 气贯长虹</p>
+                        <div class="right">
+                            <p class="tc">￥600</p>
+                            <!--<p><span class="status buy" id="test1">立即抢购</span></p>-->
+                            <p><span class="status buy">立即抢购</span></p>
+                        </div>
+                    </div>
+                    <div class="gamepic">
+                        <div class="text">贵族V7挥泪售，特权尊享霸气漏！2万金，冒险没打。三无账号，绝对安
+                            全，绝对超值。
+                        </div>
+                        <div class="picture clearfix box" id="box">
+                            <ul>
+                                <li><img src="img/test.jpg"></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="goods">
+                        <p class="part">【成品号】白金.全英雄.全皮肤.三套150级铭
+                            文.战力2000</p>
+                        <p class="tit">全天龙八部3D-S064 气贯长虹</p>
+                        <div class="right">
+                            <p class="tc">￥600</p>
+                            <p><span class="status buy">立即抢购</span></p>
+                        </div>
+                    </div>
+                    <div class="gamepic">
+                        <div class="text">贵族V7挥泪售，特权尊享霸气漏！2万金，冒险没打。三无账号，绝对安
+                            全，绝对超值。
+                        </div>
+                        <div class="picture clearfix box" id="box">
+                            <ul>
+                                <li><img src="img/test.jpg"></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="goods">
+                        <p class="part">【成品号】白金.全英雄.全皮肤.三套150级铭
+                            文.战力2000</p>
+                        <p class="tit">全天龙八部3D-S064 气贯长虹</p>
+                        <div class="right">
+                            <p class="tc">￥600</p>
+                            <p><span class="status buy">立即抢购</span></p>
+                        </div>
+                    </div>
+                    <div class="gamepic">
+                        <div class="text">贵族V7挥泪售，特权尊享霸气漏！2万金，冒险没打。三无账号，绝对安
+                            全，绝对超值。
+                        </div>
+                        <div class="picture clearfix box" id="box3">
+                            <ul>
+                                <li><img src="img/test.jpg"></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                                <li><img src="img/test.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="gray-text">
+
+
+            <span class="gray-layout">更多商品，敬请期待</span></div>
+
+    </footer>
+
+</div>
+
+<div class="shopping" id="shopping">
+    <div class="top">
+        <h2>填写取货信息</h2>
+        <img src="images/cancle.jpg" alt="" id="cancle">
+    </div>
+    <div class="center">
+        <p>【成品号】白金.全英雄.全皮肤.三套150级铭文.战力2000</p>
+        <p>￥600</p>
+        <p>安卓-首充号[鱼丸]-全服通用</p>
+    </div>
+    <div class="bottom1">
+        <div class="shang">
+            <span>联系手机 :</span> <input type="text">
+            <p>我们会将账户密码信息发送至您的邮箱，请确保手机通畅</p>
+        </div>
+        <div class="xia">
+            <p>去支付</p>
+        </div>
+    </div>
+</div>
+<div class="shabu"></div>
+<div class="scale_img" id="box2">
+    <ul class="img clearfix">
+        <li><img src="img/test.jpg" alt=""></li>
+        <li><img src="img/test.jpg" alt=""></li>
+        <li><img src="img/test.jpg" alt=""></li>
+        <li><img src="img/test.jpg" alt=""></li>
+        <li><img src="img/test.jpg" alt=""></li>
+    </ul>
+    <ul class="text clearfix">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+
+
+<script>
+    // 解决goods点击显示和消失的问题
+    var goods = document.querySelectorAll('.goods');
+    for (let i = 0; i < goods.length; i++) {
+        let _i = i;
+        goods[i].onclick = function () {
+            var gamepic = document.querySelectorAll('.gamepic');
+            if(gamepic[_i].style.display == 'none') {
+                gamepic[_i].style.display = 'block';
+            }else {
+                gamepic[_i].style.display = 'none';
+            }
+        }
+    }
+    // 结束
+    // 立即抢购按钮点击出现购买弹框
+    var buys = document.querySelectorAll('.buy');
+    var tanchuan = document.getElementById('shopping');
+    var shabu = document.querySelector('.shabu');
+    for(let i = 0; i < buys.length; i++) {
+        buys[i].onclick = function (e) {
+            tanchuan.style.display = 'block';
+            shabu.style.display = 'block';
+        }    
+    }
+    // 购买弹框结束
+    // 在购买弹框上点击x,关闭弹框
+    var cancle = document.querySelector('#cancle');
+    cancle.onclick = function () {
+        tanchuan.style.display = 'none';
+        shabu.style.display = 'none';
+    }
+    // 结束关闭购买弹框
+    
+</script>
+
+
+<script>
+    // var btn = document.querySelector('.status');
+//    var btn1 = document.getElementById('test1');
+//    var btn2 = document.getElementById('test2');
+//    var shopping = document.getElementById('shopping');
+//    var shabu = document.querySelector('.shabu');
+//    // console.log(shabu);
+//    var cancle = document.getElementById('cancle');
+//    cancle.addEventListener('click', function () {
+//        shopping.style.display = 'none';
+//        shabu.style.display = 'none';
+//    });
+//    btn1.addEventListener('click', function () {
+//        shopping.style.display = 'block';
+//        shopping.style.zIndex = '1000';
+//        shabu.style.display = 'block';
+//    });
+//    btn2.addEventListener('click', function () {
+//        shopping.style.display = 'block';
+//        shopping.style.zIndex = '1000';
+//        shabu.style.display = 'block';
+//    });
+</script>
+
+<script>
+    // document.addEventListener('DOMContentLoaded',function() {
+    // var oBox = document.querySelectorAll('.box3');
+    // for(var i = 0; i < oBox.length; i++){
+    //     oBox[i]
+    // }
+    // console.log(oBox);
+    // var oBox1 = document.getElementById('box');
+    // var oUl = document.querySelectorAll('.box3 ul');
+    // console.log(oUl);
+    // var oUl1 = document.querySelector('#box ul');
+    // var aLi1 = oUl1.children;
+    // var iNow1 = 0;
+    // var x1 = -iNow1*aLi1[0].offsetWidth;
+    // oUl1.addEventListener('touchstart',function(ev){
+    //     oUl1.style.transition = 'none'
+    //     var disX1 = ev.targetTouches[0].pageX - x1;
+    //     var downX1 = ev.targetTouches[0].pageX;
+    //     function fnMove(ev) {
+    //         x1 = ev.targetTouches[0].pageX - disX1;
+    //         oUl1.style.transform = 'translate3d('+(x1/2)+'px,0,0)';
+    //     }
+    //     function fnEnd(ev) {
+    //         var upX1 = ev.changedTouches[0].pageX;
+    //         if(Math.abs(upX1 - downX1) > 100) {
+    //             if(upX1 - downX1 < 0) {
+    //                 iNow1++;
+    //                 if(iNow1 >= aLi1.length) {
+    //                     iNow1 = 5.4;
+    //                 }
+    //             }else {
+    //                 if(iNow1 == 4.4){
+    //                     iNow1 = 4;
+    //                 }
+    //                 iNow1--;
+    //                 if(iNow1 == -1) {
+    //                     iNow1 = 0;
+    //                 }
+    //             }
+    //         }
+    //         x1 = -iNow1*aLi1[0].offsetWidth;
+    //         oUl1.style.transform = 'translate3d('+(x1/2)+'px,0,0)';
+    //         oUl1.style.transition = '200ms all ease';
+
+    //         function tEnd() {
+    //             if(iNow1==5) {
+    //                 iNow1=5;
+    //             }
+    //             if(iNow1==-1) {
+    //                 iNow1=0;
+    //             }
+    //             x1 = -iNow1*aLi1[0].offsetWidth;
+    //             oUl1.style.transform = 'translate3d('+(x1/2)+'px,0,0)';
+    //         }
+
+    //         oUl1.addEventListener('transitionend',tEnd,false);
+    //         document.removeEventListener('touchend',fnEnd,false);
+    //         document.removeEventListener('touchmove',fnMove,false);
+    //     }
+
+    //     document.addEventListener('touchmove',fnMove,false);
+    //     document.addEventListener('touchend',fnEnd,false);
+    //     ev.preventDefault();
+    // },false);
+
+    // var oUl = document.querySelectorAll('.box ul');
+    // var aLi;
+    // for(var i = 0; i < oUl.length; i++) {
+    //     aLi = oUl[i].children;
+    // }
+    // var iNow = 0;
+    // for(var i = 0; i < aLi.length; i++) {
+    //     var x = -iNow*aLi[i].offsetWidth;
+    // }
+
+
+    // var oBox3 = document.getElementById('box3');
+    // console.log(oBox3);
+    // var oUl3 = document.querySelector('#box3 ul');
+    // var aLi3 = oUl3.children;
+    // var iNow3 = 0;
+    // var x3 = -iNow1*aLi3[0].offsetWidth;
+    // oUl3.addEventListener('touchstart',function(ev){
+    //     oUl3.style.transition = 'none'
+    //     var disX3 = ev.targetTouches[0].pageX - x3;
+    //     var downX3 = ev.targetTouches[0].pageX;
+    //     function fnMove(ev) {
+    //         x3 = ev.targetTouches[0].pageX - disX3;
+    //         oUl3.style.transform = 'translate3d('+(x3/2)+'px,0,0)';
+    //     }
+    //     function fnEnd(ev) {
+    //         var upX3 = ev.changedTouches[0].pageX;
+    //         if(Math.abs(upX3 - downX3) > 100) {
+    //             if(upX3 - downX3 < 0) {
+    //                 iNow3++;
+    //                 if(iNow3 >= aLi3.length) {
+    //                     iNow3 = 5.4;
+    //                 }
+    //             }else {
+    //                 if(iNow3 == 4.4){
+    //                     iNow3 = 4;
+    //                 }
+    //                 iNow3--;
+    //                 if(iNow3 == -1) {
+    //                     iNow3 = 0;
+    //                 }
+    //             }
+    //         }
+    //         x3 = -iNow3*aLi3[0].offsetWidth;
+    //         oUl3.style.transform = 'translate3d('+(x3/2)+'px,0,0)';
+    //         oUl3.style.transition = '200ms all ease';
+
+    //         function tEnd() {
+    //             if(iNow3==5) {
+    //                 iNow3=5;
+    //             }
+    //             if(iNow3==-1) {
+    //                 iNow3=0;
+    //             }
+    //             x3 = -iNow3*aLi3[0].offsetWidth;
+    //             oUl3.style.transform = 'translate3d('+(x3/2)+'px,0,0)';
+    //         }
+
+    //         oUl3.addEventListener('transitionend',tEnd,false);
+    //         document.removeEventListener('touchend',fnEnd,false);
+    //         document.removeEventListener('touchmove',fnMove,false);
+    //     }
+
+    //     document.addEventListener('touchmove',fnMove,false);
+    //     document.addEventListener('touchend',fnEnd,false);
+    //     ev.preventDefault();
+    // },false);
+
+
+    // var oBox2 = document.getElementById('box2');
+    // var oUl2 = document.querySelector('#box2 .img');
+    // var textUl2 = document.querySelector('#box2 .text');
+    // var textLi2 = textUl2.children;
+    // var aLi2 = oUl2.children;
+
+    // var x2 = -iNow2*aLi2[0].offsetWidth;
+    // oUl2.addEventListener('touchstart',function(ev){
+    //     oUl2.style.transition = 'none'
+    //     var disX2 = ev.targetTouches[0].pageX - x2;
+    //     var downX2 = ev.targetTouches[0].pageX;
+    //     function fnMove(ev) {
+    //         x = ev.targetTouches[0].pageX - disX2;
+    //         oUl2.style.transform = 'translate3d('+x2+'px,0,0)';
+    //     }
+    //     function fnEnd(ev) {
+    //         var upX2 = ev.changedTouches[0].pageX;
+    //         if(Math.abs(upX2 - downX2) > 100) {
+    //             if(upX2 - downX2 < 0) {
+    //                 iNow2++;
+    //                 if(iNow2 >= 0 && iNow2 <= aLi2.length -1){
+    //                     textLi2[iNow2].setAttribute('class','red');
+    //                     textLi2[iNow2 - 1].setAttribute('class','');
+    //                 }
+    //                 if(iNow2 >= aLi2.length) {
+    //                     iNow2 = aLi2.length -1;
+    //                 }
+    //             }else {
+    //                 iNow2--;
+    //                 if(iNow2 >= 0 && iNow2 <= aLi2.length - 1){
+    //                     textLi2[iNow2].setAttribute('class','red');
+    //                     textLi2[iNow2 + 1].setAttribute('class','');
+    //                 }
+    //                 if(iNow2 == -1) {
+    //                     iNow2 = 0;
+    //                 }
+    //             }
+    //         }
+    //         x2 = -iNow2*aLi2[0].offsetWidth;
+    //         oUl2.style.transform = 'translate3d('+x2+'px,0,0)';
+    //         oUl2.style.transition = '200ms all ease';
+
+    //         function tEnd() {
+    //             if(iNow2==5) {
+    //                 iNow2=4;
+    //             }
+    //             if(iNow2==-1) {
+    //                 iNow2=0;
+    //             }
+    //             x = -iNow2*aLi2[0].offsetWidth;
+    //             oUl2.style.transform = 'translate3d('+x2+'px,0,0)';
+    //         }
+
+    //         oUl2.addEventListener('transitionend',tEnd,false);
+    //         document.removeEventListener('touchend',fnEnd,false);
+    //         document.removeEventListener('touchmove',fnMove,false);
+    //     }
+
+    //     document.addEventListener('touchmove',fnMove,false);
+    //     document.addEventListener('touchend',fnEnd,false);
+    //     ev.preventDefault();
+    // },false);
+
+
+    // },false);
+</script>
+</body>
+</html>
+
