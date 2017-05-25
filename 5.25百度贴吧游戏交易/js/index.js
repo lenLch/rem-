@@ -18,7 +18,7 @@ var iNow;
 
         var goods = $('.goods');
         var gamepic = $('.gamepic');
-        
+        /*这个使用es6的let块级作用于来解决每个点击的问题*/
         /*for(let i = 0; i < goods.length; i++){
             $(goods[i]).on('click',function(e){
                  console.log(status[i-1]);
@@ -32,6 +32,22 @@ var iNow;
                 }
             });
         }*/
+        /*
+        for(var i = 0; i < goods.length; i++){
+            (function(j){
+                $(goods[j]).on('click',function(e){
+                    if(e.target != status[j-1]) {
+                        if($(gamepic[j-1]).css('display) == 'block'){
+                            $(gamepic[j-1]).css('display','none');
+                        }else {
+                            $('.gamepic').hide();
+                            $(gamepic[j-1]).css('display','block');
+                        }
+                    }
+                })
+            })(i);
+        }
+        */
         // 控制每个goods的兄弟gamepic的显隐
         goods.click(function(e){
             if(!$(e.target).is("span")){
