@@ -1,0 +1,436 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0;}
+html{background:#a0a0a0;-webkit-text-size-adjust:100%;}
+body{color:#333;font:12px/1.6 'Microsoft Yahei','helvetica','arial';min-width:320px;}
+div{word-break:break-all;word-wrap:break-word}
+ul,li{list-style:none}
+img,input,textarea{vertical-align:middle;border:none;outline:none;}
+img{ width:100%; margin-bottom:1px;}
+a{vertical-align:baseline;text-decoration:none;color:#333;}
+input,textarea{-webkit-appearance:none;border-radius:0;}
+.cf:after{visibility:hidden;display:block;font-size:0;content:"";clear:both;height:0;}
+.cf{zoom:1;}
+em{color:#1c93ff;font-style:normal;}
+.wrapper{margin:0 auto;max-width:750px;background:#ececec; 	position: relative;}
+.layout{margin:0 10px 10px;clear:both;}
+.of{ overflow:hidden;}
+.blue{ color:#3385ff;}
+.fl{ float:left;}
+.fr{ float:right;}
+.tc{ text-align:center;}
+.gray{ color:#959595;}
+.red{background: red !important;}
+.red{ color:#ff0000;}
+.black{ color:#000000;}
+.gray_bg{ background:#e2e2e2!important; color:fff;}
+.clear{ clear:both;}
+/* ---------------------------------------------公用----------------------------------------*/
+.header_bg{ background:url(../images/bg.jpg) no-repeat 100% 100%; display: block; margin: 0 auto; background-size:100% auto;position: relative; }
+.game_img{ margin:0 auto;}
+.game_name{ text-align:center;}
+.txt{ text-align:center;}
+.more{ position:absolute; color:#3385ff;}
+.more a{color:#3385ff;}
+.more img{ margin-bottom:1px;}
+.main{  color:#757575;}
+.main .qq{ background:#FFFFFF;}
+.main .tradelist{ clear: both;}
+.main .tradelist li{ background:#FFFFFF;}
+.main .tradelist li .goods{ position:relative; color:#333; }
+.main .tradelist li:nth-child(1) .gamepic {display: block}
+.main .tradelist li .gamepic{ background:#f0f0f0; box-shadow: 0 1px 2px #ddd;display: none;}
+.main .tradelist li .goods p{  text-overflow:ellipsis; }
+.main .tradelist li .goods .right{ position:absolute; top:0; right:0; text-align:right; color:#ff0000;}
+.main .tradelist li .goods .status{ border-radius:4px; display:inline-block; text-align:center; background: #e64545 none repeat scroll 0 0; color: #fff;}
+.gray-text { -moz-box-pack: center; color: #848689; display: -webkit-box;  font-size: 14px;  margin: 14px 5px;  position: relative;}
+.gray-text::after {  background-color: #cbcbcb; content: ""; height: 1px; left: 0;  position: absolute;  top: 50%; transform: scaleY(0.5); width: 100%;}
+.gray-layout { background-color: #ececec;  display: block;  padding: 0 10px; position: relative;  z-index: 10;}
+.main .tradelist li .goods .wait{ background: #bb0000!important;}
+.success{ background:#fff;}
+.success p{text-align:center; color:#757575;}
+.success p.successtxt{  color:#ff0000;}
+.information{background:#f7f7f7; box-shadow: 0 1px 2px #ddd; color:#757575;}
+.hint{color:#959595;}
+.fixed { bottom: 0;left: 0; position: fixed;width: 100%; z-index: 1000; background:#FFFFFF;display: none}
+.fixed{  max-width: 750px;   left: 0;right: 0; margin:0 auto;}
+.title{ text-align:center; border-bottom:1px solid #e6e6e6;}
+.title img{ position:absolute;}
+.fixed .goods{ position:relative; color:#333; }
+.fixed .goods p{  text-overflow:ellipsis; }
+.fixed .goods .right{ position:absolute; top:0; right:0; text-align:right; color:#ff0000;}
+.phone{ background:#f7f7f7;}
+.phone p{color:#959595;}
+.zf{ background:#3385ff; text-align:center;  width:100%; border:0; color:#FFFFFF;}
+.main .tradelist li .gamepic .picture{ overflow:hidden;}
+.box {
+     margin: 0 auto;
+	position: relative;
+	overflow: hidden;overflow-wrap: break-word;
+    word-break: break-all;
+}
+.box ul{ overflow-x: auto;
+    overflow-y: hidden;}
+.box ul li {  display: inline;
+    float: left;
+    overflow: hidden;
+}
+.phone input{color:#3385ff;} 
+/*---------------------------------------320头部----------------------------------------------*/
+.header_bg{ height:115px; padding-top:10px;}
+.game_img{ width:60px; height:60px;}
+.game_name{ height:30px; line-height:30px; font-size:16px;}
+.txt{ font-size:12px; height:20px; line-height:15px;}
+.more{ top:10px; right:10px; font-size:12px;}
+.more img{ width:6px; height:10px;}
+.main{ }
+.main .qq{ height:35px; line-height:35px; font-size:12px;padding:0 10px;}
+.main .qq img{  width:18px; height:18px; margin-right:5px;}
+.main .tradelist{ margin-top:10px;}
+.main .tradelist ul{ }
+.main .tradelist li{ margin-bottom:10px;}
+.main .tradelist li .goods{ font-size:14px; line-height:14px; padding-right:90px; padding-top:5px; padding-bottom:5px; margin:0 10px 0px 10px; min-height:60px;}
+.main .tradelist li .goods p{ height:24px; }
+.main .tradelist li .goods p.part {height: auto;line-height:20px;}
+.main .tradelist li .goods p.tit {height: auto;line-height:24px; color:#959595; font-size:12px;}
+.main .tradelist li .goods .right{ top:5px; right:0px; font-size:16px; line-height:30px;}
+.main .tradelist li .goods .status{ font-size:12px; height:27px; line-height:27px; padding:0 12px;}
+.main .tradelist li .gamepic{ padding:5px 0px 10px 10px;}
+.main .tradelist li .gamepic .text{ font-size:12px;}
+.main .tradelist li .gamepic .picture{ height:78px; margin-top:5px;}
+footer{ height:30px; line-height:30px; padding-bottom:10px;}
+.success{  padding:20px 0 15px 0;}
+.success p{ line-height:30px;font-size:14px; }
+.success p.successtxt{ font-size:20px;}
+.information{ line-height:20px; font-size:12px;  padding:10px;}
+.hint{ font-size:12px; padding:5px 20px 5px 10px; line-height:20px;}
+.title{ font-size:14px; line-height:38px; height:38px;}
+.title img{ right:15px; top:8px;  width:21px; height:21px;}
+.fixed .goods{ font-size:14px; line-height:14px; padding-right:90px; padding-top:5px; padding-bottom:5px; margin:0 10px 0px 10px; min-height:60px;}
+.fixed .goods p{ height:28px; line-height:28px; font-size:16px; padding-right:10px; }
+.fixed .goods p.part {height: auto;line-height:20px; font-size:14px;}
+.fixed .goods p.tit {height: auto;line-height:24px; color:#959595; font-size:12px;}
+.fixed .goods .right{ top:5px; right:0px; font-size:16px; line-height:30px;}
+.phone{ padding:10px;}
+.phone label{ width:20%; float:left; font-size:12px;  line-height:30px;}
+.phone input{ width:77%; float:left; border:1px solid #ccc; height:30px; line-height:30px; padding-left:5px;}
+.phone p{ width:80%; float:right; font-size:12px; line-height:20px;}
+.zf{  line-height:38px; height:38px; font-size:14px; }
+
+.box ul {height: 77px;
+
+	position: absolute;
+}
+.box ul li {
+
+width: 138px;
+	height: 77px;margin-right:8px;
+}
+.box ul li:nth-child(1) {
+	padding-left: 0rem;
+}
+.box ul li:last-child {
+	padding-right: 0rem;
+}
+.box ul li img {
+	width: 138px;
+	height: 77px;
+}
+
+
+@media screen and (min-width:480px) {
+	.header_bg{ height:172px; padding-top:15px;}
+	.game_img{width:90px; height:90px;}
+	.game_name{ height:40px; line-height:40px; font-size:24px;}
+	.txt{ font-size:16px; height:30px; line-height:25px;}
+	.more{ top:20px; right:20px; font-size:16px;}
+	.more img{ width:10px; height:17px;}
+	.main{ }
+	.main .qq{ height:55px; line-height:55px; font-size:16px;padding:0 15px;}
+	.main .qq img{ width:32px; height:32px; margin-right:10px; margin-bottom:5px;}
+	.main .tradelist{ margin-top:12px;}
+	.main .tradelist ul{ }
+	.main .tradelist li{ margin-bottom:12px;}
+	.main .tradelist li .goods{ font-size:18px; line-height:30px; padding-right:110px; padding-top:10px; padding-bottom:10px; margin:0 15px 0px 15px; min-height:80px;}
+	.main .tradelist li .goods p{ height:34px; }
+	.main .tradelist li .goods p.part {height: auto;line-height:30px;}
+	.main .tradelist li .goods p.tit {height: auto;line-height:30px; color:#959595; font-size:16px;}
+	.main .tradelist li .goods .right{ top:15px; right:0px; font-size:22px; line-height:30px;}
+	.main .tradelist li .goods .status{ font-size:16px; height:32px; line-height:32px; padding:0 15px;}
+	.main .tradelist li .gamepic{ padding:10px 0px 15px 15px;}
+	.main .tradelist li .gamepic .text{ font-size:16px;}
+	.main .tradelist li .gamepic .picture{ height:120px; margin-top:10px;}
+	footer{ height:30px; line-height:30px;}
+	.success{ padding:25px 0 20px 0; }
+	.success p{ line-height:40px; font-size:18px;}
+	.success p.successtxt{ font-size:26px; line-height:40px;}
+	.information{ line-height:30px; font-size:16px;  padding:15px;}
+	.hint{ font-size:15px; padding:10px 15px; line-height:28px;}
+	.title{ font-size:20px; line-height:50px; height:50px;}
+	.title img{ right:20px; top:13px;  width:27px; height:27px;}
+	.fixed.goods{ font-size:18px; line-height:30px; padding-right:110px; padding-top:10px; padding-bottom:10px; margin:0 15px 0px 15px; min-height:80px;}
+	.fixed .goods p{ height:34px; line-height:34px; margin-right:13px; font-size:22px;}
+	.fixed .goods p.part {height: auto;line-height:30px;font-size:18px;}
+	.fixed .goods p.tit {height: auto;line-height:30px; color:#959595; font-size:16px;}
+	.fixed .goods .right{ top:15px; right:0px; font-size:22px; line-height:30px;}	
+	.phone{ padding:15px;}
+.phone label{ width:20%; float:left; font-size:18px; line-height:37px;}
+.phone input{ width:75%; float:left; border:1px solid #ccc; height:37px; line-height:37px; padding-left:10px; font-size:18px}
+.phone p{ width:80%; float:right; font-size:16px; line-height:28px; }
+.zf{  line-height:50px; height:50px; font-size:22px; }
+
+
+.box ul {height: 118px;
+
+	position: absolute;
+}
+.box ul li {
+
+	width: 210px;
+	height: 118px;margin-right:10px;
+}
+.box ul li:nth-child(1) {
+	padding-left: 0rem;
+}
+.box ul li:last-child {
+	padding-right: 0rem;
+}
+.box ul li img {
+	width: 210px;
+	height: 118px;
+}
+	
+}
+
+@media screen and (min-width:640px) {
+	.header_bg{height:229px; padding-top:20px;}
+	.game_img{width:120px; height:120px;}
+	.game_name{ height:55px; line-height:55px; font-size:28px;}
+	.txt{ font-size:22px; height:30px; line-height:30px;}
+	.more{ top:20px; right:20px; font-size:20px;}
+	.more img{ width:12px; height:21px;}
+	.main{}
+	.main .qq{ height:70px; line-height:70px; font-size:22px; padding:0 20px;}
+	.main .qq img{ width:40px; height:40px; margin-right:10px;}
+	.main .tradelist{ margin-top:14px;}
+	.main .tradelist ul{ }
+	.main .tradelist li{ margin-bottom:14px;}
+	.main .tradelist li .goods{ font-size:22px; line-height:24px; padding-right:150px; padding-top:15px; padding-bottom:15px; margin:0 20px 0px 20px;min-height:100px;}
+	.main .tradelist li .goods p{ height:44px; }
+	.main .tradelist li .goods p.part {height: auto;line-height:32px;}
+	.main .tradelist li .goods p.tit {height: auto;line-height:34px; color:#959595; font-size:20px;}
+	.main .tradelist li .goods .right{ top:23px; right:0px; font-size:30px; line-height:30px;}
+	.main .tradelist li .goods .status{ font-size:20px; height:40px; line-height:40px; padding:0 20px;}
+	.main .tradelist li .gamepic{ padding:15px 0px 20px 20px;}
+	.main .tradelist li .gamepic .text{ font-size:20px;}
+	.main .tradelist li .gamepic .picture{ height:155px; margin-top:15px;}
+	footer{ height:30px; line-height:30px;}
+	.success{ padding:30px 0 20px 0; }
+	.success p{ line-height:40px; font-size:22px;}
+	.success p.successtxt{ font-size:32px; line-height:50px;}
+	.information{ line-height:30px; font-size:20px;  padding:20px;}
+	.hint{ font-size:18px; padding:15px 20px; line-height:30px;}
+	.title{ font-size:26px; line-height:65px; height:65px;}
+    .title img{ right:20px; top:15px;  width:35px; height:35px;}
+	.fixed .goods{ font-size:22px; line-height:24px; padding-right:150px; padding-top:15px; padding-bottom:15px; margin:0 20px 0px 20px;min-height:100px;}
+	.fixed .goods p{ height:44px; line-height:44px; margin-right:20px; font-size:30px; }
+	.fixed .goods p.part {height: auto;line-height:32px; font-size:22px;}
+	.fixed .goods p.tit {height: auto;line-height:34px; color:#959595; font-size:20px;}
+	.fixed .goods .right{ top:23px; right:0px; font-size:30px; line-height:30px;}
+	.phone{ padding:20px 25px;}
+.phone label{ width:20%; float:left; font-size:24px; vertical-align:middle;line-height:50px; }
+.phone input{ width:75%; float:left; border:1px solid #ccc; height:50px; line-height:50px; padding-left:12px; font-size:20px;}
+.phone p{ width:80%; float:right; font-size:21px; line-height:35px; }
+.zf{  line-height:65px; height:65px; font-size:28px; }
+
+
+.box ul {height: 155px;
+
+	position: absolute;
+}
+.box ul li {
+width: 277px;
+	height: 155px;margin-right:15px;
+}
+.box ul li:nth-child(1) {
+	padding-left: 0rem;
+}
+.box ul li:last-child {
+	padding-right: 0rem;
+}
+.box ul li img {
+	width: 277px;
+	height: 155px;
+}
+	
+}
+
+@media screen and (min-width:750px) {
+	.header_bg{ height:272px; padding-top:20px;}
+	.game_img{ width:144px; height:144px; }
+	.game_name{ height:60px; line-height:60px; font-size:32px;}
+	.txt{ font-size:26px; height:40px; line-height:40px;}
+	.more{ top:20px; right:25px; font-size:24px;}
+	.more img{ width:14px; height:24px;}
+	.main{}
+	.main .qq{ height:85px; line-height:85px; font-size:24px; padding:0 25px;}
+	.main .qq img{ width:45px; height:45px; margin-right:10px;}
+	.main .tradelist{ margin-top:16px;}
+	.main .tradelist ul{ }
+	.main .tradelist li{ margin-bottom:16px;}
+	.main .tradelist li .goods{ font-size:24px; line-height:24px; padding-right:160px; padding-top:15px; padding-bottom:15px; margin:0 20px 0px 20px; min-height:100px; }
+	.main .tradelist li .goods p{ height:44px; }
+	.main .tradelist li .goods p.part {height: auto;line-height:34px;}
+	.main .tradelist li .goods p.tit {height: auto;line-height:34px; color:#959595; font-size:22px;}
+	.main .tradelist li .goods .right{ top:15px; right:0px; font-size:30px; line-height:30px;}
+	.main .tradelist li .goods .status{ font-size:23px; height:48px; line-height:48px; padding:0 25px;}
+	.main .tradelist li .gamepic{ padding:15px 0px 20px 20px;}
+	.main .tradelist li .gamepic .text{ font-size:24px;}
+	.main .tradelist li .gamepic .picture{ height:185px;  margin-top:15px;}
+	footer{ height:50px; line-height:50px; padding-bottom:10px;}
+	.success{ padding:40px 0 20px 0; }
+	.success p{ line-height:50px; font-size:26px; }
+	.success p.successtxt{ font-size:40px; line-height:50px;}
+	.information { line-height:40px; font-size:24px; padding:25px;}
+	.hint{ font-size:21px; padding:25px; line-height:40px;}
+	.title{ font-size:30px; line-height:75px; height:75px;}
+	.title img{ right:25px; top:17px; width:43px; height:43px;}
+	.fixed .goods{ font-size:24px; line-height:24px; padding-right:160px; padding-top:15px; padding-bottom:15px; margin:0 20px 0px 20px; min-height:100px; }
+	.fixed .goods p{ height:44px; line-height:44px; margin-right:25px; }
+	.fixed .goods p.part {height: auto;line-height:34px; font-size:24px;}
+	.fixed .goods p.tit {height: auto;line-height:34px; color:#959595; font-size:22px;}
+	.fixed .goods .right{ top:15px; right:0px; font-size:30px; line-height:30px;}
+.phone{ padding:20px 25px;}
+.phone label{ width:20%; float:left; font-size:28px; }
+.phone input{ width:75%; float:left; border:1px solid #ccc; height:50px; line-height:50px; padding-left:15px; font-size:22px;}
+.phone p{ width:80%; float:right; font-size:22px; line-height:43px; }
+.zf{  line-height:72px; height:72px; font-size:32px; }
+
+
+
+
+.box ul { 
+	height:185px; 
+	position: absolute;
+}
+.box ul li {  width: 330px;
+	height: 185px; margin-right:15px;
+}
+.box ul li:nth-child(1) {
+	padding-left: 0rem;
+}
+.box ul li:last-child {
+	padding-right: 0rem;
+}
+.box ul li img {
+	width: 330px;
+	height: 185px;
+	 min-width: 330px;
+}
+
+}
+
+
+html {
+	font-size: 100px;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+ul,li {
+	list-style: none;
+}
+body {
+	font-size: 16px;
+}
+
+.clearfix:after {
+	content: '';
+	height: 0rem;
+	display: block;
+	visibility: hidden;
+	clear: both;
+}
+
+@keyframes move {
+	0% {
+		height: 0rem;
+	}
+	100% {
+		height: 5.08rem;
+	}
+}
+.shabu {
+	position: absolute;
+	top: 0rem;
+	left: 0rem;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 888;
+	opacity: 0.5;
+	display: none;
+}
+.scale_img {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -3.75rem;
+	margin-top: -2.25rem; 
+	width: 7.5rem;
+	height: 4.5rem;
+	overflow: hidden;
+	display: none; 
+	z-index: 999;
+}
+#scale_cancle {
+	width: .43rem;
+	height: .43rem;
+	position: fixed;
+	top: 5%;
+	right: 5%;
+	z-index: 2000;
+	display: none;
+}
+#scale_cancle img {
+	width: .43rem;
+	height: .43rem;
+}
+.scale_img .img {
+	width: 37.5rem;
+	height: 3.48rem;
+}
+.scale_img .img li {
+	width: 6.4rem;
+	height: 3.48rem;
+	float: left;
+	padding: 0 .55rem;
+}
+.scale_img .img li img {
+	width: 6.4rem;
+	height: 3.48rem;
+}
+.scale_img .text {
+	margin-top: .7rem;
+	width: 3.5rem;
+	height: .5rem;
+	margin-left: 26.67%;
+	/*background-color: gray;*/
+}
+.scale_img .text li {
+	width: .3rem;
+	height: .3rem;
+	line-height: .3rem;
+	text-align: center;
+	float: left;
+	color: white;
+	font-size: .12rem;
+	border-radius: 50%;
+	background-color: gray;
+	margin: 0 .2rem;
+}
+
