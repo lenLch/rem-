@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 640) {
+                        docEl.style.fontSize = '100px';
+                    } else if (clientWidth <= 320) {
+                        docEl.style.fontSize = '50px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <!--<script src="http://res.moyoyo.com/res/style/2015/js/zepto.min.js"></script>-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-size: 100px;
+        }
+        ul,li {
+            list-style: none;
+        }
+        body {
+            font-size: 16px;
+        }
+        .box {
+            width: 6.4rem;
+            height: 3rem;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .box ul {
+            width: 32rem;
+            height: 3rem;
+        }
+        .box ul li {
+            width: 6.4rem;
+            height: 3rem;
+            float: left;
+            font-size: 1rem;
+            text-align: center;
+            font-weight: bolder;
+            line-height: 3rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    <ul>
+            <li style="background-color: red">1</li>
+        <li style="background-color: blue">2</li>
+        <li style="background-color: yellow">3</li>
+        <li style="background-color: orange">4</li>
+        <li style="background-color: black">5</li>
+    </ul>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+        var oBox = document.querySelector('.box');
+        var oUl = document.querySelector('.box ul');
+        var aLi = oUl.children;
+        var iNow = 1;
+        var x = -iNow*aLi[0].offsetWidth;
+        var timer;
+
+        function auto() {
+            iNow++;
+            x = -iNow*aLi[0].offsetWidth;
+            if(iNow==aLi.length-1) {
+                iNow = 0;
+            }
+            oUl.style.transform = 'translate3d('+x+'px,0,0)';
+            oUl.style.transition = '200ms all ease';
+        }
+
+        timer = setInterval(auto,1000);
+
+        oUl.addEventListener('onmouserover',function () {
+           clearInterval(timer)
+        });
+
+        oUl.addEventListener('onmouserout',function () {
+            setInterval(auto,1000);
+        });
+        oUl.addEventListener('touchstart',function(ev){
+            clearInterval(timer);
+            ev.preventDefault();
+            oUl.style.transition = 'none';
+            var disX = ev.targetTouches[0].pageX - x;
+            var downX = ev.targetTouches[0].pageX;
+            function fnMove(ev){
+                x = ev.targetTouches[0].pageX - disX;
+                oUl.style.transform = 'translate3d('+x+'px,0,0)';
+            }
+            function fnEnd(ev){
+                var upX = ev.changedTouches[0].pageX;
+                //判断是否移动距离大于50
+                if(Math.abs(upX - downX)>50){
+                    //左边移动
+                    if(upX - downX<0){
+                        iNow++;
+                        if(iNow==aLi.length){iNow=aLi.length-1;}
+                    }else{
+                        //右边移动
+                        iNow--;
+                        if(iNow==-1){iNow=0;}
+                    }
+                }
+                //储存此时ul的位置
+                x = -iNow*aLi[0].offsetWidth;
+                oUl.style.transform = 'translate3d('+x+'px,0,0)';
+                oUl.style.transition = '200ms all ease';
+                document.removeEventListener('touchend',fnEnd,false);
+                document.removeEventListener('touchmove',fnMove,false);
+                ev.preventDefault();
+            }
+
+            document.addEventListener('touchmove',fnMove,false);
+            document.addEventListener('touchend',fnEnd,false);
+            //阻止默认事件
+            ev.preventDefault();
+        },false);
+
+
+    },false);
+</script>
+
+
+
+</body>
+</html>

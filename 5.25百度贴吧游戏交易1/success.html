@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else if (clientWidth <= 320) {
+                        docEl.style.fontSize = '42.6px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-size: 100px;
+        }
+        body {
+            font-size: 16px;
+            background-color: #ececec;
+        }
+        div {
+            box-sizing: border-box;
+        }
+        div.header {
+            width: 7.5rem;
+            height: 1.65rem;
+            text-align: center;
+            margin: 0 auto;
+            background-color: white;
+        }
+        .header p:nth-child(1) {
+            font-size: .4rem;
+            color: #ff2d2d;
+            padding-top: .3rem;
+        }
+        .header p:nth-child(2) {
+            font-size: .26rem;
+            color: #535353;
+            padding: .05rem 0;
+        }
+        .header p:nth-child(2) span {
+            color: #f9a878;
+        }
+        .container {
+            width: 7.5rem;
+            height: 2rem;
+            background-color: #f7f7f7;
+            padding: .3rem .3rem;
+            margin: 0 auto;
+        }
+        .container .top p:nth-child(1){
+            font-size: .26rem;
+            color: #a0a0a0;
+        }
+        .container .top p:nth-child(2){
+            font-size: .24rem;
+            color: #535353;
+        }
+        .container .bottom .left {
+            width: 50%;
+            float: left;
+        }
+        .container .bottom .left p:nth-child(1) {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .container .bottom p {
+            font-size: .24rem;
+            color: #535353;
+            padding: .05rem 0;
+        }
+        .container .bottom  p span {
+            color: #a0a0a0;
+        }
+        .container .bottom .right {
+            width: 50%;
+            float: left;
+            padding-left: .3rem;
+        }
+        .footer {
+            width: 7.5rem;
+            padding: .3rem .3rem;
+            margin: 0 auto;
+        }
+        .footer p {
+            font-size: .21rem;
+            color: #bababa;
+            padding: .05rem 0;
+        }
+        .footer p span {
+            color: #535353;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <p>购买成功</p>
+    <p>您的订单号为<span>456789</span></p>
+</div>
+<div class="container">
+    <div class="top">
+        <p>所购买到的账号信息如下：</p>
+        <p>王者荣耀</p>
+    </div>
+    <div class="bottom">
+        <div class="left">
+            <p>区服：<span>安卓-手q-203无间刃峰</span></p>
+            <p>账：<span>xy123456</span></p>
+        </div>
+        <div class="right">
+            <p>角色名：<span>昵称嘻嘻大人</span></p>
+            <p>密：<span>dt456789</span></p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>温馨提示</p>
+    <p>1、账号信息会同时发送到您的手机，请注意查收；</p>
+    <p>2、如需换绑或其他帮助请联系售后客服QQ：<span>3312654302</span>；</p>
+    <p>3、客服不会向您索要账号密码信息，谨防诈骗。</p>
+</div>
+</body>
+</html>

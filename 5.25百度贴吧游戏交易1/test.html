@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度贴吧游戏交易</title>
+    <script src="http://res.moyoyo.com/res/style/2015/js/zepto.min.js"></script>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else if (clientWidth <= 320) {
+                        docEl.style.fontSize = '42.6px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-size: 100px;
+        }
+        body {
+            font-size: 16px;
+        }
+        ul,li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        div {
+            box-sizing: border-box;
+        }
+        /*头部*/
+        .header {
+            width: 7.5rem;
+            height: 2.92rem;
+            background: url("images/bg.jpg") no-repeat;
+            margin: 0 auto;
+            position: relative;
+        }
+        .header > img {
+            width: 1.44rem;
+            height: 1.44rem;
+            margin-left: 3.03rem;
+            padding-top: .2rem;
+        }
+        .header p:nth-child(2) {
+            height: .6rem;
+            line-height: .6rem;
+            font-size: .32rem;
+            color: #3e3f41;
+            text-align: center;
+        }
+        .header p:nth-child(3) {
+            height: .6rem;
+            line-height: .6rem;
+            text-align: center;
+            font-size: .26rem;
+            color: #3e3f41;
+        }
+        .header p:nth-child(3) span {
+            color: #428dfd;
+        }
+        .header .right {
+            width: 2.2rem;
+            height: .24rem;
+            position: absolute;
+            top: .4rem;
+            right: .2rem;
+        }
+        .header .right a {
+            float: left;
+            height: .24rem;
+            line-height: .24rem;
+            font-size: .24rem;
+            color: #428dfd;
+        }
+        .header .right img {
+            float: right;
+            width: .14rem;
+            height: .24rem;
+        }
+        /*头部结束*/
+        /*联系QQ*/
+        .qq {
+            width: 7.5rem;
+            height: .87rem;
+            line-height: .87rem;
+            background-color: #ffffff;
+            padding: 0 .25rem;
+            margin: 0 auto;
+        }
+        .qq .left {
+            float: left;
+        }
+        .qq .left img {
+            float: left;
+            width: .45rem;
+            height: .45rem;
+            padding-top: .2rem;
+        }
+        .qq .left p {
+            float: left;
+            padding-left: .1rem;
+            color: #a3a3a3;
+            font-size: .24rem;
+        }
+        .qq .right {
+            float: right;
+        }
+        .qq .right p {
+            color: #a3a3a3;
+            font-size: .24rem;
+        }
+        /*联系QQ结束*/
+        .space {
+            width: 7.5rem;
+            height: .1rem;
+            background-color: #ececec;
+            margin: 0 auto;
+        }
+        /*出售号*/
+        .sale {
+            width: 7.5rem;
+            margin: 0 auto;
+
+        }
+        .sale .top {
+            background-color: #ffffff;
+            width: 7.5rem;
+            height: 1.52rem;
+            padding: .2rem .25rem;
+        }
+        .sale .top .left {
+            width: 80%;
+            height: 1.52rem;
+            float: left;
+            padding-right: .7rem;
+        }
+        .sale .top .left p:nth-child(1) {
+            font-size: .26rem;
+            color: #585858;
+        }
+        .sale .top .left p:nth-child(2) {
+            font-size: .22rem;
+            padding: .15rem 0;
+            color: #a5a5a5;
+        }
+        .sale .top .right {
+            float: left;
+            width: 20%;
+            height: 1.52rem;
+        }
+        .sale .top .right p {
+            font-size: .3rem;
+            color: red;
+            padding: .08rem 0;
+            text-align: center;
+        }
+        .sale .top .right a {
+            display: block;
+            width: 1.4rem;
+            height: .5rem;
+            border-radius: .08rem;
+            background-color: red;
+            color: white;
+            text-align: center;
+            line-height: .5rem;
+            font-size: .24rem;
+        }
+        .sale .bottom {
+            background-color: #f7f7f7;
+            padding-bottom: .23rem;
+        }
+        .sale .bottom .explain {
+            padding: 0 .2rem 0 .25rem;
+        }
+        .sale .bottom .explain p {
+            font-size: .22rem;
+            color: #999999;
+            padding-bottom: .2rem;
+        }
+
+        .sale .bottom .img {
+            width: 7.5rem;
+            height: 1.74rem;
+            overflow: hidden;
+            padding-left: .25rem;
+        }
+        .sale .bottom .img ul {
+            /*width: 15.5rem;*/
+            height: 1.74rem;
+        }
+        .sale .bottom .img ul li {
+            width: 3.1rem;
+            float: left;
+            height: 1.74rem;
+            margin-right: .15rem;
+        }
+        .sale .bottom .img ul li:last-child {
+            margin-right: 0;
+        }
+        .sale .bottom .img img {
+            width: 3.1rem;
+            height: 1.74rem;
+        }
+        /*出售号结束*/
+        /*更多*/
+        .more {
+            width: 7.5rem;
+            height: .86rem;
+            background-color: #ececec;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .more p {
+            font-size: .24rem;
+            color: #cdcdcd;
+        }
+        /*更多结束*/
+        /*购买弹窗*/
+        .buy {
+            width: 7.5rem;
+            height: 4.9rem;
+            background-color: #ffffff;
+            margin: 0 auto;
+            display: none;
+            position: fixed;
+            bottom: 0;
+            z-index: 1000;
+        }
+        .buy .top {
+            margin: 0 .25rem;
+            height: .77rem;
+            line-height: .77rem;
+            position: relative;
+            border-bottom: .01rem solid #f7f7f7;
+        }
+        .buy .top p {
+            font-size: .3rem;
+            text-align: center;
+            color: #707070;
+        }
+        .buy .top img {
+            width: .43rem;
+            height: .43rem;
+            position: absolute;
+            top: .17rem;
+            right: 0;
+            cursor: pointer;
+        }
+        .buy .center {
+            padding-left: .25rem;
+            height: 1.5rem;
+        }
+        .buy .center .left {
+            float: left;
+            width: 80%;
+            height: 1.5rem;
+            padding-right: .7rem;
+        }
+        .buy .center .left p:nth-child(1) {
+            font-size: .26rem;
+            color: #707070;
+            padding: .2rem 0 .18rem 0;
+        }
+        .buy .center .left p:nth-child(2) {
+            font-size: .22rem;
+            color: #a5a5a5;
+        }
+        .buy .center .right {
+            float: left;
+            width: 20%;
+            height: 1.5rem;
+        }
+        .buy .center .right p {
+            color: red;
+            font-size: .3rem;
+            padding-top: .5rem;
+        }
+        .buy .bottom {
+            width: 6.9rem;
+            height: 1.65rem;
+            background-color: #f7f7f7;
+            margin: 0 .3rem;
+        }
+        .buy .bottom p:nth-child(1) {
+            height: .45rem;
+            line-height: .45rem;
+            padding: .3rem 0 0 .2rem;
+            font-size: .28rem;
+            color: #707070;
+        }
+        .buy .bottom p:nth-child(1) input {
+            width: 4.5rem;
+            height: .49rem;
+            outline: none;
+            font-size: .19rem;
+            text-indent: .1rem;
+        }
+        .buy .bottom p:nth-child(2) {
+            WIDTH: 4.5rem;
+            font-size: .22rem;
+            color: #b6b6b6;
+            margin: .2rem 0 0 1.7rem;
+        }
+        .buy .pay {
+            margin-top: .2rem;
+            width: 7.5rem;
+            height: .8rem;
+            line-height: .8rem;
+            text-align: center;
+            background-color: #3385ff;
+        }
+        .buy .pay p {
+            color: white;
+            font-size: .36rem;
+        }
+        /*购买弹窗结束*/
+        .shabu {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+<div class="header">
+    <img src="img/1.png" alt="">
+    <p>王者荣耀</p>
+    <p>hi , 欢迎<span>嘻嘻大人</span>您的到来~</p>
+    <div class="right">
+        <a href="javascript: ;">全部游戏及商品</a>
+        <img src="images/jt.png" alt="">
+    </div>
+</div>
+<!--头部结束-->
+<!--联系QQ-->
+<div class="qq">
+    <div class="left">
+        <img src="images/qq.png" alt="">
+        <p>QQ：3480978528</p>
+    </div>
+    <div class="right">
+        <p>周一至周五 9:00-19:00</p>
+    </div>
+</div>
+<!--联系QQ结束-->
+<div class="space"></div>
+<!--商品展示区-->
+<div class="sale">
+    <div class="top">
+        <div class="left">
+            <p>【成品号】白金.全英雄.全皮肤.三套150级铭文.战力2000</p>
+            <p>安卓-手Q-203区龙腾万里</p>
+        </div>
+        <div class="right">
+            <p>￥600</p>
+            <a href="javascript: ;">立即抢购</a>
+        </div>
+    </div>
+    <div class="bottom" style="display: block;">
+        <div class="explain"><p>贵族V7挥泪售，特权尊享霸气漏！2万金，冒险没打。三无账号，绝对安全，绝对超值。</p></div>
+        <div class="img" id="box1">
+            <ul>
+                <li><img src="img/test.jpg" alt=""></li>
+                <li><img src="img/test.jpg" alt=""></li>
+                <li><img src="img/test.jpg" alt=""></li>
+                <li><img src="img/test.jpg" alt=""></li>
+                <li><img src="img/test.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--商品展示区结束-->
+<div class="space"></div>
+<div class="sale">
+    <div class="top">
+        <div class="left">
+            <p>【成品号】白金.全英雄.全皮肤.三套150级铭文.战力2000</p>
+            <p>安卓-手Q-203区龙腾万里</p>
+        </div>
+        <div class="right">
+            <p>￥600</p>
+            <a href="javascript: ;">立即抢购</a>
+        </div>
+    </div>
+    <div class="bottom" style="display: block">
+        <div class="explain"><p>贵族V7挥泪售，特权尊享霸气漏！2万金，冒险没打。三无账号，绝对安全，绝对超值。</p></div>
+        <div class="img" id="box2">
+            <ul>
+                <li><img src="img/test.jpg" alt=""></li>
+                <li><img src="img/test.jpg" alt=""></li>
+                <li><img src="img/test.jpg" alt=""></li>
+                <li><img src="img/test.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="space"></div>
+<div class="sale">
+    <div class="top">
+        <div class="left">
+            <p>【成品号】白金.全英雄.全皮肤.三套150级铭文.战力2000</p>
+            <p>安卓-手Q-203区龙腾万里</p>
+        </div>
+        <div class="right">
+            <p>￥600</p>
+            <a href="javascript: ;" style="background-color: gray">立即抢购</a>
+        </div>
+    </div>
+    <div class="bottom" style="display: block">
+        <div class="explain"><p>贵族V7挥泪售，特权尊享霸气漏！2万金，冒险没打。三无账号，绝对安全，绝对超值。</p></div>
+        <div class="img" id="box3">
+            <ul>
+                <li><img src="img/test.jpg" alt=""></li>
+                <li><img src="img/test.jpg" alt=""></li>
+                <li><img src="img/test.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="space"></div>
+<!--更多-->
+<div class="more"><p>——— 更多商品，敬请期待 ———</p></div>
+<!--更多结束-->
+<!--购买弹窗-->
+<div class="buy">
+    <div class="top">
+        <p>填写取货信息</p>
+        <img src="img/cancle.jpg" alt="">
+    </div>
+    <div class="center">
+        <div class="left">
+            <p>【成品号】白金.全英雄.全皮肤.三套150级铭文.战力2000</p>
+            <p>安卓-首充号[鱼丸]-全服通用</p>
+        </div>
+        <div class="right">
+            <p>￥600</p>
+        </div>
+    </div>
+    <div class="bottom">
+        <p>联系手机： <input type="text"></p>
+        <p>我们会将账号密码信息发送至您的手机，请确保手机通畅</p>
+    </div>
+    <div class="pay"><p>去支付</p></div>
+</div>
+<!--购买弹窗结束-->
+<!--背景被黑色的砂布-->
+<div class="shabu"></div>
+
+
+
+
+<script>
+    /*点击红色购买按钮出现购买窗口和点击取消按钮关闭弹窗*/
+    var buy_btn = $('.sale .top .right a');
+    var shabu = $('.shabu');
+    var buy_win = $('.buy');
+    var cancle_btn = $('.buy .top img');
+    buy_btn.click(function (e) {
+        if($(e.target).css('background-color') != 'gray') {
+            shabu.css('display','block');
+            buy_win.css('display','block');
+            cancle_btn.click(function () {
+                shabu.css('display','none');
+                buy_win.css('display','none');
+            });
+        }
+    });
+
+    /*只显示一个sale下的图片*/
+    var show_hide_btn = $('.sale .top');
+    var show_hide_box = show_hide_btn.siblings();
+    show_hide_btn.click(function (e) {
+        if(e.target != $($(this).children('div')[1]).find('a')[0]) {
+            if($(this).siblings().css('display') == 'none') {
+                show_hide_box.hide();
+                $(this).siblings().css('display','block');
+            }else {
+                $(this).siblings().css('display','none');
+            }
+        }
+    });
+
+    /*sale下的图片滑动和放大*/
+    var scroll_img = $('.sale .bottom .img ul');
+
+    /*设置每个ul的width*/
+    for(var i = 0; i < scroll_img.length; i++) {
+        var scroll_img_lis = $(scroll_img[i]).children('li');
+        var li_width = $(scroll_img_lis[0]).css('width');
+        li_width = Number(li_width.substring(0,li_width.length-2));
+        var li_margin_right = $(scroll_img_lis[0]).css('margin-right');
+        li_margin_right = Number(li_margin_right.substring(0,li_margin_right.length-2));
+        var total_margin_right = li_margin_right * (scroll_img_lis.length-1);
+        var scroll_img_width = (li_width * scroll_img_lis.length) + total_margin_right;
+        $(scroll_img[i]).css('width',scroll_img_width / 100 + 'rem');
+    }
+
+
+    /*每个ul图片的轮播*/
+    var index = 0;
+    var x = 0;
+    function scrollImg(id) {
+        var scroll_img = $('#'+id);
+        scroll_img.on('touchstart',function(e) {
+            scroll_img.css('transition','none');
+            // 初始值
+            var leftRight;
+            // 刚触到屏幕
+            var downX =  e.targetTouches[0].pageX;
+            var lis = $('#'+id + ' li');
+//            console.log(lis);
+            x = -index * lis[0].offsetWidth;
+            var disX = e.targetTouches[0].pageX - x;
+            // 得到li的margin_right
+            var li_margin_right = $(lis[0]).css('margin-right');
+            li_margin_right = Number(li_margin_right.substring(0,li_margin_right.length-2));
+//            var _this = this;
+            function move(e) {
+                x = e.targetTouches[0].pageX - disX;
+                scroll_img.css('transform','translate3d('+(x-li_margin_right)+'px,0,0');
+            }
+            function end(e) {
+                var upX = e.changedTouches[0].pageX;
+                if(upX - downX < 0) {
+                    leftRight = -li_margin_right * (index + 1);
+                    index++;
+                    if(index >= lis.length - 1) {
+                        index = lis.length - 2;
+                    }
+                }else {
+                    leftRight = li_margin_right * (index + 1);
+                    index--;
+                    if(index == -1) {
+                        index = 0;
+                    }
+                }
+                x = -index * lis[0].offsetWidth;
+                scroll_img.css('transform','translate3d('+(x+leftRight)+'px,0,0)');
+                scroll_img.css('transition','200ms all ease');
+
+                function tEnd() {
+                    if(index == -1) {
+                        index = 0;
+                    }
+                    if(index == 0) {
+                        scroll_img.css('transform','translate3d(0px,0,0)');
+                    }else {
+                        x = -index*lis[0].offsetWidth;
+                        scroll_img.css('transform','translate3d('+ (x+leftRight) +'px,0,0)');
+                    }
+                }
+                scroll_img.on('transitionend',tEnd);
+                scroll_img.off('touchend');
+                scroll_img.off('touchmove');
+            }
+            scroll_img.on('touchend',end);
+            scroll_img.on('touchmove',move);
+            e.preventDefault();
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
