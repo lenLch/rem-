@@ -13,6 +13,8 @@ ul,li {
 }
 body {
 	font-size: 16px;
+    background-color: rgba(0,0,0,0.5);
+    font-family: "Microsoft YaHei","SimSun","Arial";
 }
 header,div {
 	box-sizing: border-box;
@@ -23,12 +25,14 @@ header,div {
 	background-color: rgb(255,111,115);
 	margin: 0 auto;
 	background: url('../images/header.jpg') no-repeat;
+	background-size: cover;
 }
 .header .top {
 	width: 6.4rem;
 	height: .89rem;
-	border-bottom: .01rem solid #f5999c;
+	border-bottom: .02rem solid #f5999c;
 	color: #fff;
+    position: absolute;
 }
 .header .top .left {
 	height: .89rem;
@@ -41,11 +45,22 @@ header,div {
 	width: .2rem;
 	height: .34rem;
 }
+.clearfix::after {
+    content: '';
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
 .header .top .center {
+    position: absolute;
 	text-align: center;
-	margin-top: .1rem;
-	float: left;
-	margin-left: 1.84rem;
+    width: 5.4rem;
+    height: .5rem;
+    top: 50%;
+    left: 50%;
+    margin-left: -2.7rem;
+    margin-top: -0.35rem;
 }
 .header .top .center h2 {
 	font-size: .32rem;
@@ -64,9 +79,10 @@ header,div {
 	margin-top: .345rem;
 }
 .header .bottom {
-	width: 6.4rem;	
+	width: 6.4rem;
 	height: 2.01rem;
 	color: #fff;
+    padding-top: .89rem;
 }
 .header .bottom div {
 	float: left;
@@ -83,13 +99,14 @@ header,div {
 }
 .header .bottom .center {
 	margin-top: .2rem;
-	width: 4.89rem;
+	width: 4.8rem;
 	height: .83rem;
+	float: right;
 	margin-left: .15rem;
-	border-bottom: .01rem solid #f5999c;
+	border-bottom: .02rem solid #f5999c;
 }
 .header .bottom .center .left {
-	width: 3.2rem;
+	width: 3.35rem;
 	height: .63rem;
 	margin-left: 0;
 	float: left;
@@ -99,24 +116,17 @@ header,div {
 	color: #fff600;
 }
 .header .bottom .center .right{
-	width: 1.48rem;
+	width: 1.4rem;
 	height: .46rem;
 	padding-left: .1rem;
 	margin-top: .12rem;
 	line-height: .46rem;
 	border: .02rem solid #fff;
 	border-right: none;
-	float: right;		
+	float: right;
 	font-size: .22rem;
 	position: relative;
 }
-/*.header .bottom .center .right span {
-	width: 1.48rem;
-	height: .46rem;
-	line-height: .46rem;
-	border: .02rem solid #fff;
-	border-right: none;
-}*/
 .header .bottom .center .right img {
 	position: absolute;
 	top: .17rem;
@@ -125,13 +135,20 @@ header,div {
 	height: .12rem;
 }
 .header .bottom .right {
-	width: 5.04rem;
+	width: 5rem;
 	height: .78rem;
+	margin-top: .15rem;
 }
 .header .bottom .right .left {
 	float: left;
-	width: 2.3rem;
+	width: 2.5rem;
 	height: .78rem;
+	margin: 0;
+	padding: 0;
+}
+.header .bottom .right .left:nth-child(3) {
+	width: 2.4rem;
+	float: right;
 }
 .header .bottom .right .left img {
 	float: left;
@@ -157,11 +174,10 @@ header,div {
 	width: .02rem;
 	height: .69rem;
 	background-color: #f1acb2;
-	margin-top: .15rem;
 }
 .money {
 	width: 6.4rem;
-	height: 1.95rem;
+	height: 2.19rem;
 	margin: 0 auto;
 	background-color: #ffffff;
 }
@@ -170,7 +186,7 @@ header,div {
 	width: 6.4rem;
 	height: .78rem;
 	line-height: .78rem;
-	border-bottom: .01rem solid #ebecee;
+	border-bottom: .02rem solid #ebecee;
 }
 .money .top .left {
 	font-size: .24rem;
@@ -196,9 +212,8 @@ header,div {
 	margin-top: .29rem;
 }
 .money .bottom {
-	width:　6.4rem;
-	height: 1.16rem;
-	/*line-height: 1.16rem;*/
+	width: 6.4rem;
+	height: 1.5rem;
 	padding: 0 0 0 .2rem;
 }
 .money .bottom p {
@@ -206,26 +221,345 @@ header,div {
 	color: #585858;
 	margin-top: .28rem;
 	margin-bottom: .05rem;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+	white-space: normal;
 }
 .money .bottom p a {
 	color: #1093f7;
 }
 .money .bottom span {
-	font-size: .2rem;
+	font-size: .21rem;
 	color: #c7c7c7;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .click_more {
 	width: 6.4rem;
-	height: 2.52rem;
+	height: 1rem;
+    line-height: 1rem;
 	background-color: #ebecee;
 	margin: 0 auto;
 }
 .click_more p {
 	text-align: center;
-	padding-top: .5rem;
 	font-size: .24rem;
 	color: #bfbfc0;
+}
+.showChoseGame .showResult {
+	width: 6.4rem;
+	height: 1.8rem;
+	border-bottom: .02rem solid #e8e8e8;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 1.8rem;
+    background-color: white;
+}
+.showChoseGame .showResult p {
+	font-size: .24rem;
+	color: #8a8a8a;
+}
+.showChoseGame .priceChose {
+	width: 6.4rem;
+	height: .8rem;
+	border-bottom: .02rem solid #e8e8e8;
+	margin: 0 auto;
+    background-color: white;
+}
+.showChoseGame .priceChose ul {
+	width: 6.4rem;
+	height: .8rem;
+	padding: .1rem .2rem;
+	box-sizing: border-box;
+    text-align: center;
+}
+.showChoseGame .priceChose ul li {
+	width: .69rem;
+	text-align: center;
+	float: left;
+	border-bottom: .04rem solid transparent;
+	padding: .1rem;
+	margin: 0 .3rem;
+	font-size: .24rem;
+	color: #8a8a8a;
+}
+.choseGame {
+	width: 6.4rem;
+	height: .8rem;
+	background-color: #ffffff;
+	position: relative;
+	margin: 0 auto;
+    border-bottom: .02rem solid #e8e8e8;
+}
+.choseGame .left {
+	width: 3.12rem;
+	height: .8rem;
+	float: left;
+    position: relative;
+}
+.choseGame .left p {
+	line-height: .8rem;
+	float: left;
+	font-size: .24rem;
+	color: #666666;
+	padding-left: 35%;
+}
+.choseGame .left img {
+	width: .13rem;
+	height: .08rem;
+	float: left;
+	margin-top: .36rem;
+	padding-left: .1rem;
+}
+.choseGame .left img:nth-child(3) {
+	display: none;
+}
+.choseGame .right {
+	width: 3.12rem;
+	height: .8rem;
+	float: left;
+}
+.choseGame .right p {
+	line-height: .8rem;
+	font-size: .24rem;
+	color: #666666;
+	float: left;
+	padding-left: 35%;
+}
+.choseGame .right img {
+	width: .13rem;
+	height: .08rem;
+	margin-top: .36rem;
+	padding-left: .1rem;
+}
+.choseGame .right img:nth-child(3) {
+	display: none;
+}
+.choseGame .left .line {
+	position: absolute;
+	width: .02rem;
+	height: .46rem;
+	background-color: #f5f5f5;
+	top: .16rem;
+    right: -0.03rem;
+}
+.choseGameTanChuang {
+	width: 6.4rem;
+	height: 6.5rem;
+	background-color: #ffffff;
+	margin: 0 auto;
+	z-index: 1000;
+	position: fixed;
+	left: 50%;
+	margin-left: -3.2rem;
+	top: 50%;
+	margin-top: -3.25rem;
+	display: none;
+}
+.choseGameTanChuang .choseGame {
+    border-bottom: none;
+    position: relative;
+}
+.choseGameTanChuang .choseGame .line {
+    position: absolute;
+    width: .02rem;
+    height: .46rem;
+    background-color: #f5f5f5;
+    top: 50%;
+    margin-top: -0.23rem;
+    left: 50%;
+}
+.choseGameTanChuang .searchGame {
+	width: 6.4rem;
+	height: .8rem;
+	line-height: .7rem;
+	border-top: .02rem solid #e8e8e8;
+	border-bottom: .02rem solid #e8e8e8;
+	background-color: #f8f8f8;
+}
+.choseGameTanChuang .searchGame .search {
+	width: 5.6rem;
+	margin-left:.45rem;
+	height: .6rem;
+	position: relative;margin-top: .07rem;
+}
+.choseGameTanChuang .searchGame input {
+	width: 4.6rem;
+	height: .6rem;
+	border: 1px solid #d4d4d4;
+	border-radius: .1rem 0 0 .1rem;
+	text-indent: .1rem;
+	outline: none;
+	font-size: .24rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+    color: #999999;
+}
+.choseGameTanChuang .searchGame a {
+	display: inline-block;
+	width: 1rem;
+	height: .6rem;
+	line-height: .6rem;
+	text-align: center;
+	border: 1px solid #d4d4d4;
+	font-size: .24rem;
+	color: #999999;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-left: none;
+	border-radius: 0 .08rem .08rem 0;
+}
+.choseGameTanChuang .rightChose .result {
+	width: 6.4rem;
+	height: .6rem;
+	line-height: .6rem;
+	background-color: white;
+	text-align: center;
+	color: #8d8d8d;
+	font-size: .24rem;
+}
+.choseGameTanChuang .rightChose .result span {
+	color: red;
+}
+.gameList {
+	width: 6.4rem;
+}
+.gameList .top {
+	width: 6.4rem;
+	height: .6rem;
+	text-align: center;
+	line-height: .6rem;
+	background-color: #f8f8f8;
+}
+.gameList .top p {
+	font-size: .24rem;
+	color: #8d8d8d;
+}
+.gameList .bottom {
+	width: 6.4rem;
+}
+.gameList .bottom ul {
+	padding:  .21rem;
+}
+.gameList .bottom ul li {
+	float: left;
+	width: 2.5rem;
+	height: .7rem;
+	line-height: .7rem;
+	text-align: center;
+	border-bottom: .02rem solid #e8e8e8;
+	font-size: .26rem;
+	color: #8d8d8d;
+}
+.gameList .bottom ul li:nth-child(odd) {
+	margin-right: .85rem;
+}
+.choseGameTanChuang .leftChose {
+	display: none;
+	width: 6.4rem;
+	border-top: .02rem solid #e8e8e8;
+	padding-top: .2rem;
+	text-align: center;
+}
+.choseGameTanChuang .leftChose p {
+	font-size: .24rem;
+	color: #999999;
+	text-align: center;
+	padding: .2rem 0;
+	width: 4rem;
+	margin-left: 1.2rem;
+	border-bottom: .01rem solid #e8e8e8;
+}
+/*.choseGameTanChuang .leftChose p:hover {
+	color: red;
+	border-color: red;
+}*/
+.choseGameTanChuang .rightChose {
+	display: none;
+}
+.red {
+	color: red !important;
+	border-bottom-color: red !important;
+}
+.shabu {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	display: none;
+}
+.tuiguangTanChuang {
+	width: 5.6rem;
+	height: 7rem;
+	border-radius: .04rem;
+	background-color: #ffffff;
+	margin: 0 auto;
+	position: fixed;
+	left: 50%;
+	margin-left: -2.8rem;
+	top: 50%;
+	margin-top: -2.8rem;
+	z-index: 1000;
+	display: none;
+}
+.tuiguangTanChuang .top {
+	width: 5.6rem;
+	height: .7rem;
+	border-bottom: .02rem solid #f1f1f1;
+	padding: 0 .2rem;
+	line-height: .7rem;
+}
+.tuiguangTanChuang .top .left {
+	float: left;
+}
+.tuiguangTanChuang .top .left img {
+	float: left;
+	width: .4rem;
+	height: .4rem;
+	padding-top: .15rem;
+}
+.tuiguangTanChuang .top .left p {
+	float: left;
+	font-size: .3rem;
+	color: #606060;
+	padding-left: .1rem;
+}
+.tuiguangTanChuang .top .right {
+	float: right;
+}
+.tuiguangTanChuang .top .right img {
+	width: .42rem;
+	height: .42rem;
+	padding-top: .14rem;
+}
+.tuiguangTanChuang .center {
+	width: 5.6rem;
+}
+.tuiguangTanChuang .center ul {
+	padding: 0 .2rem;
+}
+.tuiguangTanChuang .center ul li p:nth-child(1){
+	font-size: .22rem;
+	height: .4rem;
+	line-height: .4rem;
+	color: #777777
+}
+.tuiguangTanChuang .center ul li p:nth-child(2) {
+	font-size: .2rem;
+	color: #8a8a8a;
+	border: .02rem solid #ebebeb;
+	border-radius: .04rem;
+	padding: .15rem;
+	background-color: #f8f8f8;
+	width: 4.9rem;
+}
+.tuiguangTanChuang .bottom {
+	width: 5.6rem;
+	padding: .2rem;
+	color: #ff6b2a;
+	font-size: .2rem;
 }

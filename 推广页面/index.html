@@ -5,25 +5,24 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
 	<title>Document</title>
 	<script>
-		(function (doc, win) {
-        	var docEl = doc.documentElement,
-            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-            recalc = function () {
-                var clientWidth = docEl.clientWidth;
-                if (!clientWidth) return;
-                if(clientWidth>=640){
-                    docEl.style.fontSize = '100px';
-                }else if (clientWidth <= 320) {
-                	docEl.style.fontSize = '50px';
-                }
-                else{
-                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
-                }
-            };
-        	if (!doc.addEventListener) return;
-        	win.addEventListener(resizeEvt, recalc, false);
-        	doc.addEventListener('DOMContentLoaded', recalc, false);
-    	})(document, window);
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '100px';
+                    }else if (clientWidth <= 320) {
+                        docEl.style.fontSize = '50px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
 	</script>
 	<link rel="stylesheet" href="./css/index.css">
 	<link rel="stylesheet" href="./css/base.css">
@@ -39,11 +38,6 @@
 			<p>边玩游戏边赚钱</p>
 		</div>
 		<div class="right">
-			<!-- <ul>
-				<li><span></span><p></p></li>
-				<li><span></span><p></p></li>
-				<li><span></span><p></p></li>
-			</ul> -->
 			<img src="./images/more.jpg" alt="">
 		</div>
 	</div>
@@ -89,61 +83,405 @@
 	</div>
 </div>
 <div class="space"></div>
+<div class="showChoseGame">
+	<div class="choseGame">
+		<div class="left">
+			<p>首充号</p>
+			<img src="./images/top.png" alt="">
+			<img src="./images/bottom_red.jpg" alt="">
+			<div class="line"></div>
+		</div>
+
+		<div class="right">
+			<p>选择游戏</p>
+			<img src="./images/top.png" alt="">
+			<img src="./images/bottom_red.jpg" alt="">
+		</div>
+	</div>
+	<div class="showResult">
+		<p>对不起，暂时还没找到游戏的相关信息</p>
+	</div>
+	<div class="priceChose">
+		<ul>
+			<li>默认</li>
+			<li>价格↓</li>
+			<li>价格↑</li>
+			<li>最新</li>
+		</ul>
+	</div>
+</div>
 <div class="tuiguang">
-	<p><img src="./images/zhang.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+	<p>
+		<span>账</span>
+		<span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span>
+	</p>
 	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
 	<p>平台售价：66666元</p>
 	<p>最多可赚：<span>5000</span>元</p>
-	<!-- 27 27  154 50-->
-	<img src="./images/zan.jpg" alt="">
+	<a href="javascript: ;"><img src="./images/zan.jpg" alt=""><span>我要推广</span></a>
+</div>
+<div class="space"></div>
+<div class="tuiguang even">
+	<p>
+		<span>首</span>
+		<span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span>
+	</p>
+	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
+	<p>平台售价：66666元</p>
+	<p>最多可赚：<span>5000</span>元</p>
+	<a href="javascript: ;"><img src="./images/zan.jpg" alt=""><span>我要推广</span></a>
 </div>
 <div class="space"></div>
 <div class="tuiguang">
-	<p><img src="./images/shou.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+	<p>
+		<span>账</span>
+		<span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span>
+	</p>
 	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
 	<p>平台售价：66666元</p>
 	<p>最多可赚：<span>5000</span>元</p>
-	<!-- 27 27  154 50-->
-	<img src="./images/zan.jpg" alt="">
+	<a href="javascript: ;"><img src="./images/zan.jpg" alt=""><span>我要推广</span></a>
+</div>
+<div class="space"></div>
+<div class="tuiguang even">
+	<p>
+		<span>首</span>
+		<span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span>
+	</p>
+	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
+	<p>平台售价：66666元</p>
+	<p>最多可赚：<span>5000</span>元</p>
+	<a href="javascript: ;"><img src="./images/zan.jpg" alt=""><span>我要推广</span></a>
 </div>
 <div class="space"></div>
 <div class="tuiguang">
-	<p><img src="./images/zhang.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+	<p>
+		<span>账</span>
+		<span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span>
+	</p>
 	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
 	<p>平台售价：66666元</p>
 	<p>最多可赚：<span>5000</span>元</p>
-	<!-- 27 27  154 50-->
-	<img src="./images/zan.jpg" alt="">
+	<a href="javascript: ;"><img src="./images/zan.jpg" alt=""><span>我要推广</span></a>
 </div>
 <div class="space"></div>
-<div class="tuiguang">
-	<p><img src="./images/shou.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
+<div class="tuiguang even">
+	<p>
+		<span>首</span>
+		<span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span>
+	</p>
 	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
 	<p>平台售价：66666元</p>
 	<p>最多可赚：<span>5000</span>元</p>
-	<!-- 27 27  154 50-->
-	<img src="./images/zan.jpg" alt="">
-</div>
-<div class="space"></div>
-<div class="tuiguang">
-	<p><img src="./images/zhang.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
-	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
-	<p>平台售价：66666元</p>
-	<p>最多可赚：<span>5000</span>元</p>
-	<!-- 27 27  154 50-->
-	<img src="./images/zan.jpg" alt="">
-</div>
-<div class="space"></div>
-<div class="tuiguang">
-	<p><img src="./images/shou.jpg" alt=""> <span>【68级.牛头人.战士】68级牛头人战士持续升级打造中</span></p>
-	<p>小冰冰传奇(刀塔传奇) | 当乐账号 | 52区爱泼特斯</p>
-	<p>平台售价：66666元</p>
-	<p>最多可赚：<span>5000</span>元</p>
-	<!-- 27 27  154 50-->
-	<img src="./images/zan.jpg" alt="">
+	<a href="javascript: ;"><img src="./images/zan.jpg" alt=""><span>我要推广</span></a>
 </div>
 <div class="click_more">
 	<p>点击加载更多...</p>
 </div>
+<div class="choseGameTanChuang">
+	<div class="choseGame">
+		<div class="left">
+			<p>首充号</p>
+			<img src="./images/top.png" alt="">
+			<img src="./images/bottom_red.jpg" alt="">
+		</div>
+		<div class="line"></div>
+		<div class="right">
+			<p>选择游戏</p>
+			<img src="./images/top.png" alt="">
+			<img src="./images/bottom_red.jpg" alt="">
+		</div>
+	</div>
+	<div class="leftChose">
+		<p>首充号</p>
+		<p>首充号</p>
+		<p>首充号</p>
+		<p>首充号</p>
+	</div>
+	<div class="rightChose">
+		<div class="searchGame">
+			<div class="search">
+				<input type="text" placeholder="输入名称\拼音查找游戏" />
+				<a>搜游戏</a>
+			</div>
+		</div>
+		<div class="result">
+			<p>对不起，没有找到"<span>asdkaj</span>"的相关游戏</p>
+		</div>
+		<div class="gameList">
+			<div class="top">
+				<p>游戏列表</p>
+			</div>
+			<div class="bottom">
+				<ul>
+					<li class="red">全部</li>
+					<li>秦少游</li>
+					<li>我叫MT</li>
+					<li>王者荣耀</li>
+					<li>镇魔曲</li>
+					<li>放开那三国2</li>
+					<li>梦幻诛仙</li>
+					<li>阴阳师</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="shabu"></div>
+<div class="tuiguangTanChuang">
+	<div class="top">
+		<div class="left">
+			<img src="./images/handle.png" alt="">
+			<p>长按复制推广内容</p>
+		</div>
+		<div class="right">
+			<img src="./images/cancle.jpg" alt="">
+		</div>
+	</div>
+	<div class="center">
+		<ul>
+			<li>
+				<p>1.普通推广：</p>
+				<p>【小冰冰传奇账号】68级牛头人战士持续升级打造中,详情请看：http://moyoyo.com/q_t2157_525806770
+					22487</p>
+			</li>
+			<li>
+				<p>2.一句话趣推：</p>
+				<p>天上掉虾儿饼也就一秒钟的事，不信你看：http://moyoyo.com/q_t2157_5925806770
+					22487</p>
+			</li>
+			<li>
+				<p>3.商品推广地址：</p>
+				<p>http://moyoyo.com/q_t2157_5925806770
+					22487</p>
+			</li>
+		</ul>
+	</div>
+	<div class="bottom">
+		<p>改商品为首充号商品，推广成功后，买家30天内的所有首充号代充同样可以赚取推广费!</p>
+	</div>
+</div>
+
+<script src="http://res.moyoyo.com/res/style/2015/js/zepto.min.js"></script>
+<script>
+    var shabu = $('.shabu');
+    var showChoseGameLeft = $('.showChoseGame .choseGame .left');
+    var showChoseGameRight = $('.showChoseGame .choseGame .right');
+    var hideChoseGame = $('.choseGameTanChuang');
+    var leftChangeTopImg = $('.choseGameTanChuang .choseGame .left img:nth-child(3)');
+    var leftChangeBottomImg = $('.choseGameTanChuang .choseGame .left img:nth-child(2)');
+    var leftChangeP = $('.choseGameTanChuang .choseGame .left p');
+    var rightChangeP = $('.choseGameTanChuang .choseGame .right p');
+    var rightChangeTopImg = $('.choseGameTanChuang .choseGame .right img:nth-child(3)');
+    var rightChangeBottomImg = $('.choseGameTanChuang .choseGame .right img:nth-child(2)');
+    var gameListUl = $('.choseGameTanChuang .gameList ul');
+    var gameListLis = gameListUl.children('li');
+    var tanchuangLeftChangeImg = $('.choseGameTanChuang .choseGame .left');
+    var tanchuangRightChangeImg = $('.choseGameTanChuang .choseGame .right');
+    var leftShow = $('.choseGameTanChuang .leftChose');
+    var rightShow = $('.choseGameTanChuang .rightChose');
+    var closeTuiguangTanChuang = $('.tuiguangTanChuang > .top > .right img');
+    var choseGame = $('.showChoseGame .choseGame');
+    var choseGameTanChuang = $('.choseGameTanChuang');
+
+	/*定义遮罩显示和关闭相关的事件*/
+    var handler = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    };
+	/*当出现遮罩的时候，不能滚动*/
+    var OpenMask = function() {
+        document.body.style.overflow = 'hidden';
+        document.body.addEventListener('touchmove',handler,false);
+        document.body.addEventListener('wheel',handler,false);
+    };
+	/*当遮罩消失的时候，回复滚动*/
+    var CloseMask = function() {
+        document.body.style.overflow = 'auto';
+        document.body.removeEventListener('touchmove',handler,false);
+        document.body.removeEventListener('wheel',handler,false);
+    };
+    var tuiguangClick = $('.tuiguang a');
+    var tuiguangTanChuang = $('.tuiguangTanChuang');
+    var priceChoseLis = $('.showChoseGame .priceChose ul li');
+    var choseGameTanChuangLeftChoseP = $('.choseGameTanChuang .leftChose p');
+    var input = $('.choseGameTanChuang .searchGame input');
+
+	/*点击每个游戏列表的时候，给每个li添加red类*/
+    gameListLis.on('click',function () {
+        gameListLis.removeClass('red');
+        $(this).addClass('red');
+    });
+
+	/*点击（显示）选择游戏左边的相关逻辑*/
+    showChoseGameLeft.click(function () {
+        shabu.css('display','block');
+        shabu.css('height','500%');
+        hideChoseGame.css('display','block');
+        leftChangeTopImg.css('display','block');
+        leftChangeBottomImg.css('display','none');
+        leftChangeP.css('color','red');
+        rightChangeTopImg.css('display','none');
+        rightChangeBottomImg.css('display','block');
+        rightChangeP.css('color','#999999');
+        gameListLis.removeClass('red');
+        $(gameListLis[0]).addClass('red');
+        leftShow.css('display','block');
+        rightShow.css('display','none');
+		OpenMask();
+        choseGame.css('zIndex','100');
+        shabu.css('zIndex','2000');
+        choseGameTanChuang.css('zIndex','3000');
+    });
+
+	/*点击（显示）选择游戏右边的相关逻辑*/
+    showChoseGameRight.click(function () {
+        shabu.css('display','block');
+        shabu.css('height','500%');
+        hideChoseGame.css('display','block');
+        rightChangeTopImg.css('display','block');
+        rightChangeBottomImg.css('display','none');
+        rightChangeP.css('color','red');
+        leftChangeTopImg.css('display','none');
+        leftChangeBottomImg.css('display','block');
+        leftChangeP.css('color','#999999');
+        gameListLis.removeClass('red');
+        $(gameListLis[0]).addClass('red');
+        leftShow.css('display','none');
+        rightShow.css('display','block');
+		OpenMask();
+        choseGame.css('zIndex','100');
+        shabu.css('zIndex','2000');
+        choseGameTanChuang.css('zIndex','3000');
+    });
+
+	/*点击（隐藏）选择游戏左边相关的逻辑*/
+    tanchuangLeftChangeImg.on('click',function () {
+        rightChangeTopImg.css('display','none');
+        rightChangeBottomImg.css('display','block');
+        leftChangeTopImg.css('display','block');
+        leftChangeBottomImg.css('display','none');
+        leftChangeP.css('color','red');
+        rightChangeP.css('color','#999999');
+        leftShow.css('display','block');
+        rightShow.css('display','none');
+    });
+
+	/*点击（隐藏）选择游戏右边的相关逻辑*/
+    tanchuangRightChangeImg.on('click',function () {
+        leftChangeTopImg.css('display','none');
+        leftChangeBottomImg.css('display','block');
+        rightChangeTopImg.css('display','block');
+        rightChangeBottomImg.css('display','none');
+        rightChangeP.css('color','red');
+        leftChangeP.css('color','#999999');
+        leftShow.css('display','none');
+        rightShow.css('display','block');
+    });
+
+    /*点击推广按钮出现推广弹窗*/
+    tuiguangClick.click(function () {
+        document.body.style.overflow = 'hidden';
+        shabu.css('height','300%');
+		shabu.css('display','block');
+		tuiguangTanChuang.css('display','block');
+		OpenMask();
+        shabu.css('zIndex','2000');
+		tuiguangTanChuang.css('zIndex','3000');
+    });
+
+	/*点击黑色背景的蒙布的时候，选择游戏弹框消失 推广弹窗也消失*/
+    shabu.click(function () {
+        shabu.css('display','none');
+        hideChoseGame.css('display','none');
+        CloseMask();
+        tuiguangTanChuang.css('display','none');
+    });
+
+    /*点击推广弹窗上的关闭按钮，关闭推广弹窗*/
+    closeTuiguangTanChuang.click(function (){
+        document.body.style.overflow = 'auto';
+        shabu.css('display','none');
+        tuiguangTanChuang.css('display','none');
+        CloseMask();
+    });
+
+	/*当滑动超出一定距离的时候 选择游戏固定在顶部*/
+	/*我不知道为什么低版本的浏览器设置了这个没用*/
+	/*$('body').on('touchmove',function (e) {
+	    e.preventDefault();
+        var headerHeight = Math.floor(Number($('.header').css('height').replace('px','')));
+        var moneyHeight = Math.floor(Number($('.money').css('height').replace('px','')));
+        var showChoseGameHeight = Math.floor(Number($('.showChoseGame').css('height').replace('px','')));
+
+        var scrollHeight = headerHeight + moneyHeight + showChoseGameHeight;
+
+	    var st = $(this).scrollTop();
+	    if(st >= scrollHeight) {
+            choseGame.css('position','fixed');
+            choseGame.css('top','0');
+            choseGame.css('left','50%');
+            choseGame.css('marginLeft','-3.2rem');
+            choseGame.css('zIndex','1000');
+            shabu.css('height','500%');
+		}else {
+            choseGame.css('position','inherit');
+		}
+    });*/
+
+	/*当滚轮滚到一定距离的时候，选择游戏固定在顶部*/
+    $(window).on('scroll',function (e) {
+        e.preventDefault();
+//        e.stopPropagation();
+        var st = $(this).scrollTop();
+        var headerHeight = Math.floor(Number($('.header').css('height').replace('px','')));
+        var moneyHeight = Math.floor(Number($('.money').css('height').replace('px','')));
+        var showChoseGameHeight = Math.floor(Number($('.showChoseGame').css('height').replace('px','')));
+
+        var scrollHeight = headerHeight + moneyHeight + showChoseGameHeight;
+        if(st >= scrollHeight) {
+            choseGame.css('position','fixed');
+            choseGame.css('top','0');
+            choseGame.css('left','50%');
+            choseGame.css('marginLeft','-3.2rem');
+            choseGame.css('zIndex','1000');
+            shabu.css('height','500%');
+        }else {
+            choseGame.css('position','inherit');
+            choseGame.css('marginLeft','auto');
+        }
+    });
+
+    /*给每个价格选择li添加点击事件*/
+    /*默认第一个*/
+    $(priceChoseLis[0]).css('color','red');
+    $(priceChoseLis[0]).css('borderColor','red');
+    priceChoseLis.click(function () {
+        priceChoseLis.css('color','#8a8a8a');
+        priceChoseLis.css('borderColor','transparent');
+		$(this).css('color','red');
+		$(this).css('borderColor','red');
+    });
+
+    /*每个choseGameTanChuangLeftChoseP的点击事件*/
+    $(choseGameTanChuangLeftChoseP[0]).css('color','red');
+    $(choseGameTanChuangLeftChoseP[0]).css('borderColor','red');
+    choseGameTanChuangLeftChoseP.click(function () {
+        choseGameTanChuangLeftChoseP.css('color','#999999');
+        choseGameTanChuangLeftChoseP.css('borderColor','lightgray');
+        $(this).css('color','red');
+        $(this).css('borderColor','red');
+    });
+    /*input输入框聚焦的事件*/
+    input.focus(function () {
+		$(this).css('color','black');
+		this.setAttribute('placeholder','');
+    });
+	/*input输入框失焦的事件*/
+    input.blur(function () {
+        $(this).css('color','#999999');
+        this.setAttribute('placeholder','输入名称\\拼音查找游戏');
+    });
+</script>
 </body>
 </html>

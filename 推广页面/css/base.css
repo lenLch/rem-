@@ -1,54 +1,89 @@
 .space {
-			width: 6.4rem;
-			height: .11rem;
-			margin: 0 auto;
-			background-color: #ebecee;
-		}
+	width: 6.4rem;
+	height: .11rem;
+	margin: 0 auto;
+	background-color: #ebecee;
+}
 .tuiguang {
-			width: 6.4rem;
-			height: 1.9rem;
-			box-sizing: border-box;
-			margin: 0 auto;
-			padding: .2rem .2rem 0 .2rem;
-			position: relative;
-		}
-		.tuiguang p {
-			font-size: .22rem;
-		}
-		.tuiguang p:nth-child(1) {
-			height: .27rem;
-			font-size: .24rem;
-			color: #333333;
-			margin-bottom: .2rem;
-		}
-		.tuiguang p:nth-child(1) > img {
-			float: left;
-			width: .27rem;
-			height: .27rem;
-		}
-		.tuiguang p:nth-child(1) span {
-			height: .27rem;
-			float: left;
-			margin-top: -0.02rem;
-		}
-		.tuiguang p:nth-child(2) {
-			color: #a3a3a3;
-			margin-bottom: .1rem;
-		}
-		.tuiguang p:nth-child(3) {
-			color: #bebebe;
-			margin-bottom: .1rem;
-		}
-		.tuiguang p:nth-child(4) {
-			color: #c6c6c6;
-		}
-		.tuiguang p:nth-child(4) span {
-			color: #ff8689;
-		}
-		.tuiguang > img {
-			width: 1.54rem;
-			height: .5rem;
-			position: absolute;
-			right: .2rem;
-			bottom: .28rem;
-		}
+	width: 6.4rem;
+	height: 1.9rem;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: .2rem .2rem 0 .2rem;
+	position: relative;
+	background-color: white;
+}
+/*.tuiguang p {
+	font-size: .26rem;
+}*/
+.tuiguang p:nth-child(1) {
+	height: .35rem;
+	font-size: .26rem;
+	color: #333333;
+	margin-bottom: .1rem;
+}
+.tuiguang p:nth-child(1) > span:nth-child(1) {
+	float: left;
+	width: .35rem;
+	height: .35rem;
+	color: white;
+	background-color: #7ac03b;
+	font-size: .26rem;
+	text-align: center;
+	line-height: .35rem;
+}
+.tuiguang p:nth-child(1) span:nth-child(2) {
+	height: .35rem;
+	float: left;
+	width: 5.6rem;
+	font-size: .24rem;
+	margin-top: -0.02rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.even p:nth-child(1) span:nth-child(1) {
+	background-color: #f88f3a;
+}
+.tuiguang p:nth-child(2) {
+	color: #878787;
+	margin-bottom: .06rem;
+    font-size: .22rem;
+}
+.tuiguang p:nth-child(3) {
+	color: #bebebe;
+	margin-bottom: .05rem;
+    font-size: .22rem;
+}
+.tuiguang p:nth-child(4) {
+	color: #c6c6c6;
+    font-size: .22rem;
+}
+.tuiguang p:nth-child(4) span {
+	color: #ff8689;
+}
+.tuiguang > a {
+	width: 1.54rem;
+	height: .5rem;
+	position: absolute;
+	right: .2rem;
+	bottom: .28rem;
+	border: .01rem solid #ff394d;
+	background-color: #ff4d62;
+	border-radius: .08rem;
+	box-sizing: border-box;
+}
+.tuiguang > a img {
+	position: absolute;
+	width: .31rem;
+	height: .27rem;
+	top: .1rem;
+	left: .1rem;
+}
+.tuiguang > a span {
+	font-size: .22rem;
+	color: white;
+	position: absolute;
+	top: .09rem;
+	right: .1rem;
+}
