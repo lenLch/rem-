@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+	<title>Document</title>
+	<script>
+		(function (doc, win) {
+        	var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=750){
+                    docEl.style.fontSize = '100px';
+                }else if (clientWidth <= 320) {
+                	docEl.style.fontSize = '50px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+        	if (!doc.addEventListener) return;
+        	win.addEventListener(resizeEvt, recalc, false);
+        	doc.addEventListener('DOMContentLoaded', recalc, false);
+    	})(document, window);
+	</script>
+    <script type="text/javascript" src="http://res.moyoyo.com/res/style/2015/js/zepto.min.js"> </script>
+    
+    <style>
+            html {
+                font-size: 100px;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            a {
+                text-decoration: none;
+            }
+            ul,li {
+                list-style: none;
+            }
+            body {
+                font-size: 16px;
+            }
+            #box {
+                width: 7.5rem;
+                height: 1.74rem;
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+            }
+            #box ul {
+                width: 16.1rem;
+                height: 1.74rem;
+                position: absolute;
+                /*transform: translateX(-3.1rem);*/
+            }
+            #box ul li {
+                width: 3.1rem;
+                height: 1.74rem;
+                padding: 0 .075rem;
+                float: left;
+            }
+            #box ul li:nth-child(1) {
+                padding-left: 0rem;
+            }
+            #box ul li:last-child {
+                padding-right: 0rem;
+            }
+            #box ul li img {
+                width: 3.1rem;
+                height: 1.74rem;
+            }
+            .clearfix:after {
+                content: '';
+                height: 0rem;
+                display: block;
+                visibility: hidden;
+                clear: both;
+            }
+            .tan {
+                margin-top: -0.01rem;
+                width: 7.5rem;
+                height: 2rem;
+                margin: 0 auto;
+                position: relative;
+                /*background-color: gray;*/
+            }
+            a {
+                display: block;
+                text-decoration: none;
+                width: 1.4rem;
+                height: .5rem;
+                background-color: red;
+                color: white;
+                position: absolute;
+                bottom: .2rem;
+                right: .2rem;
+                border-radius: .08rem;
+                font-size: .24rem;
+                line-height: .5rem;
+                text-align: center;
+            }
+            .shopping {
+                width: 7.5rem;
+                height: 5.08rem;
+                background-color: #ffffff;
+                margin: 0 auto;
+                padding: 0 .3rem;
+                box-sizing: border-box;
+                display: none;
+                position: absolute;
+                bottom: 0rem;
+                animation: move 1s ease;
+            }
+            .shopping > .top {
+                width: 6.9rem;
+                height: .77rem;
+                line-height: .77rem;
+                border-bottom: .01rem solid #f7f7f7;
+                position: relative;
+            }
+            .shopping > .top h2 {
+                text-align: center;
+                font-size: .3rem;
+                color: #777777;
+            }
+            .shopping > .top img {
+                width: .43rem;
+                height: .43rem;
+                position: absolute;
+                top: .185rem;
+                right: 0rem;
+                cursor: pointer;
+            }
+            .shopping .center {
+                width: 6.9rem;
+                height: 1.49rem;
+                position: relative;
+            }
+            .shopping .center p:nth-child(1) {
+                margin-top: .2rem;
+                width: 5.128rem;
+                font-size: .26rem;
+                color: #4b4b4b;
+            }
+            .shopping .center p:nth-child(2) {
+                width: .78rem;
+                height: .26rem;
+                color: red;
+                position: absolute;
+                top: 50%;
+                right: .93rem;
+                font-size: .3rem;
+                margin-top: -0.13rem;
+            }
+            .shopping .center p:nth-child(3) {
+                font-size: .22rem;
+                color: #a2a2a2;
+                margin-top: .2rem;
+            }
+            .shopping .bottom1 {
+                width: 6.9rem;
+                height: 2.6rem;        
+            } 
+            .shopping .bottom1 .shang {
+                width: 6.9rem;
+                height: 1.65rem;
+                background-color: #f7f7f7;
+                margin-bottom: .135rem;
+            }
+            .shopping .bottom1 .shang span {
+                font-size: .28rem;
+                color: #747474;
+                margin-left: .2rem;
+                margin-top: .3rem;
+            }
+            .shopping .bottom1 .shang input {
+                width: 4.49rem;
+                height: .47rem;
+                outline: none;
+                margin-top: .25rem;
+            }
+            .shopping .bottom1 .shang p {
+                width: 4.49rem;
+                font-size: .22rem;
+                color: #acacac;
+                margin-left: 1.5rem;
+                margin-top: .1rem;
+            }
+            .shopping .bottom1 .xia {
+                width: 7.5rem;
+                height: .82rem;
+                padding: 0rem;
+                background-color: #3385ff;
+                margin-left: -0.3rem;
+            }
+            .shopping .bottom1 .xia p {
+                text-align: center;
+                height: .82rem;
+                line-height: .82rem;
+                font-size: .36rem;
+                color: white;
+            }
+            @keyframes move {
+                0% {
+                    height: 0rem;
+                }
+                100% {
+                    height: 5.08rem;
+                }
+            }
+            .shabu {
+                position: absolute;
+                top: 0rem;
+                left: 0rem;
+                width: 100%;
+                height: 100%;
+                background-color: #737373;
+                z-index: 888;
+                opacity: 0.8;
+                display: none;
+            }
+            .scale_img {
+                position: absolute;
+                top: 30%;
+                width: 7.5rem;
+                height: 4.5rem;
+                overflow: hidden;
+                display: none;
+                z-index: 999;
+            }
+            .scale_img .img {
+                width: 37.5rem;
+                height: 3.48rem;
+            }
+            .scale_img .img li {
+                width: 6.4rem;
+                height: 3.48rem;
+                float: left;
+                padding: 0 .55rem;
+            }
+            .scale_img .img li img {
+                width: 6.4rem;
+                height: 3.48rem;
+            }
+
+
+            .scale_img .text {
+                margin-top: .3rem;
+                width: 3.5rem;
+                height: .5rem;
+                margin-left: 26.67%;
+                /*background-color: gray;*/
+            }
+            .scale_img .text li {
+                width: .3rem;
+                height: .3rem;
+                line-height: .3rem;
+                text-align: center;
+                float: left;
+                color: white;
+                font-size: .12rem;
+                border-radius: 50%;
+                background-color: gray;
+                margin: 0 .2rem;
+            }
+            .red {
+                background-color: red !important;
+            }
+    </style>
+    <script>
+    var iNow2 = 0;
+        $(function(){
+            $("#box ul li").tap(function(){
+                var index = $(this).index();
+                iNow2 = index;
+                $('.scale_img').css('display','block');
+                $('.shabu').css('display','block');
+                var ofw = $('.scale_img .img li')[0].offsetWidth;
+                console.log(ofw,index);
+                $('.scale_img .img').css('transform','translate3d('+(-index*ofw)+'px,0px,0px)');
+                var textLen = $('.text > li').length;
+                if(index >= 1 && index <= textLen-1){
+                    // $('.text > li')[index].setAttribute('class','red');
+                    $($('.text > li')[index]).addClass("red");
+                    $('.text > li')[index -1].setAttribute('class','');
+                }
+                // if(index >= 2){
+                //     $('.text > li')[0].setAttribute('class','');
+                // } 
+                if(index <= textLen-2 && index >= 0){
+                    $('.text > li')[index].setAttribute('class','red');
+                    $('.text > li')[index + 1].setAttribute('class','');
+                } 
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function() {
+
+
+            var oBox = document.querySelector('.box3');
+            console.log(oBox);
+
+
+            var oBox1 = document.getElementById('box');
+            var oUl1 = document.querySelector('#box ul');
+            var aLi1 = oUl1.children;
+            var iNow1 = 0;
+            var x1 = -iNow1*aLi1[0].offsetWidth;
+            oUl1.addEventListener('touchstart',function(ev){
+                oUl1.style.transition = 'none'
+                var disX1 = ev.targetTouches[0].pageX - x1;
+                var downX1 = ev.targetTouches[0].pageX;
+                function fnMove(ev) {
+                    x1 = ev.targetTouches[0].pageX - disX1;
+                    oUl1.style.transform = 'translate3d('+(x1/2)+'px,0,0)';
+                }
+                function fnEnd(ev) {
+                    var upX1 = ev.changedTouches[0].pageX;
+                    if(Math.abs(upX1 - downX1) > 100) {
+                        if(upX1 - downX1 < 0) {
+                            iNow1++;
+                            if(iNow1 >= aLi1.length) {
+                                iNow1 = 5.4;
+                            }
+                        }else {
+                            if(iNow1 == 4.4){
+                                iNow1 = 4;
+                            }
+                            iNow1--;
+                            if(iNow1 == -1) {
+                                iNow1 = 0;
+                            }
+                        }
+                    }
+                    x1 = -iNow1*aLi1[0].offsetWidth;
+                    oUl1.style.transform = 'translate3d('+(x1/2)+'px,0,0)';
+                    oUl1.style.transition = '200ms all ease';
+
+                    function tEnd() {
+                        if(iNow1==5) {
+                            iNow1=5;
+                        }
+                        if(iNow1==-1) {
+                            iNow1=0;
+                        }
+                        x1 = -iNow1*aLi1[0].offsetWidth;
+                        oUl1.style.transform = 'translate3d('+(x1/2)+'px,0,0)';
+                    }
+
+                    oUl1.addEventListener('transitionend',tEnd,false);
+                    document.removeEventListener('touchend',fnEnd,false);
+                    document.removeEventListener('touchmove',fnMove,false);
+                }
+
+                document.addEventListener('touchmove',fnMove,false);
+                document.addEventListener('touchend',fnEnd,false);
+                ev.preventDefault();
+            },false);
+      
+
+            var oBox2 = document.getElementById('box2');
+            var oUl2 = document.querySelector('#box2 .img');
+            var textUl2 = document.querySelector('#box2 .text');
+            var textLi2 = textUl2.children;
+            var aLi2 = oUl2.children;
+            
+            var x2 = -iNow2*aLi2[0].offsetWidth;
+            oUl2.addEventListener('touchstart',function(ev){
+                oUl2.style.transition = 'none'
+                var disX2 = ev.targetTouches[0].pageX - x2;
+                var downX2 = ev.targetTouches[0].pageX;
+                function fnMove(ev) {
+                    x = ev.targetTouches[0].pageX - disX2;
+                    oUl2.style.transform = 'translate3d('+x2+'px,0,0)';
+                }
+                function fnEnd(ev) {
+                    var upX2 = ev.changedTouches[0].pageX;
+                    if(Math.abs(upX2 - downX2) > 100) {
+                        if(upX2 - downX2 < 0) {
+                            iNow2++;
+                            if(iNow2 >= 0 && iNow2 <= aLi2.length -1){
+                                textLi2[iNow2].setAttribute('class','red');
+                                textLi2[iNow2 - 1].setAttribute('class','');
+                            }
+                            if(iNow2 >= aLi2.length) {
+                                iNow2 = aLi2.length -1;                        
+                            }
+                        }else {
+                            iNow2--;
+                            if(iNow2 >= 0 && iNow2 <= aLi2.length - 1){
+                                textLi2[iNow2].setAttribute('class','red');
+                                textLi2[iNow2 + 1].setAttribute('class','');
+                            }
+                            if(iNow2 == -1) {
+                                iNow2 = 0;
+                            }
+                        }
+                    }
+                    x2 = -iNow2*aLi2[0].offsetWidth;
+                    oUl2.style.transform = 'translate3d('+x2+'px,0,0)';
+                    oUl2.style.transition = '200ms all ease';
+
+                    function tEnd() {
+                        if(iNow2==5) {
+                            iNow2=4;
+                        }
+                        if(iNow2==-1) {
+                            iNow2=0;
+                        }
+                        x = -iNow2*aLi2[0].offsetWidth;
+                        oUl2.style.transform = 'translate3d('+x2+'px,0,0)';
+                    }
+
+                    oUl2.addEventListener('transitionend',tEnd,false);
+                    document.removeEventListener('touchend',fnEnd,false);
+                    document.removeEventListener('touchmove',fnMove,false);
+                }
+
+                document.addEventListener('touchmove',fnMove,false);
+                document.addEventListener('touchend',fnEnd,false);
+                ev.preventDefault();
+            },false);
+
+
+        },false);
+    </script>
+</head>
+<body>
+    <div id="box" class="clearfix">
+        <ul>
+            <li><img src="./test.jpg" alt=""></li> 
+            <li><img src="./test.jpg" alt=""></li>
+            <li><img src="./test.jpg" alt=""></li>
+            <li><img src="./test.jpg" alt=""></li>
+            <li><img src="./test.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div class="tan">
+        <a href="javascript: ;" id="test">立即抢购</a>
+    </div>
+    <div class="shopping" id="shopping">
+        <div class="top">
+            <h2>填写取货信息</h2>
+            <img src="./cancle.jpg" alt="" id="cancle">
+        </div>
+        <div class="center">
+            <p>【成品号】白金.全英雄.全皮肤.三套150级铭文.战力2000</p>
+            <p>￥600</p>
+            <p>安卓-首充号[鱼丸]-全服通用</p>
+        </div>
+        <div class="bottom1">
+            <div class="shang">
+                <span>联系手机 :</span> <input type="text">
+                <p>我们会将账户密码信息发送至您的邮箱，请确保手机通畅</p>
+            </div>
+            <div class="xia">
+                <p>去支付</p>
+            </div>
+        </div>
+    </div>
+    <div class="shabu"></div>
+    <div class="scale_img" id="box2">
+        <ul class="img clearfix">
+            <li><img src="./test.jpg" alt=""></li> 
+            <li><img src="./test.jpg" alt=""></li>
+            <li><img src="./test.jpg" alt=""></li>
+            <li><img src="./test.jpg" alt=""></li>
+            <li><img src="./test.jpg" alt=""></li>
+        </ul>
+        <ul class="text clearfix">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script>
+        var btn = document.querySelector('.tan a');
+        var shopping = document.getElementById('shopping');
+        var shabu = document.querySelector('.shabu');
+        var cancle = document.getElementById('cancle');
+        cancle.addEventListener('click',function(){
+            shopping.style.display = 'none';
+            shabu.style.display = 'none';
+        });
+        btn.addEventListener('click',function(){
+            shopping.style.display = 'block';
+            shopping.style.zIndex = '1000';
+            shabu.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
